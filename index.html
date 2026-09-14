@@ -36,7 +36,7 @@
       radial-gradient(760px 520px at -10% 18%,rgba(55,110,190,.28),transparent 64%),
       linear-gradient(180deg,#07101f 0%,#0b1728 58%,#07101f 100%)}
     body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.25;background-image:
-      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(to bottom,black,transparent 82%);mask-image:linear-gradient(to bottom,black,transparent 82%)}
+      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 82%)}
 
     img{max-width:100%;height:auto}
     .brand-logo{width:54px;height:54px;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(0,0,0,.28));flex:0 0 auto}
@@ -92,7 +92,34 @@
     .lab{display:block;color:#475569;font-size:12px;font-weight:800;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
     input,select{width:100%;border:1px solid #d8e1ee;background:#fff;border-radius:12px;padding:13px 12px;color:#0b1526;outline:0;min-height:48px}
     input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,153,58,.15)}
-    .phone-row{display:grid;grid-template-columns:124px 1fr;gap:8px}
+
+    .form-card{overflow:visible}
+    .field{display:block;margin-bottom:10px}
+    .phone-row{display:grid;grid-template-columns:154px 1fr;gap:8px;align-items:start}
+    .phone-country-field{position:relative;min-width:0}
+    .country-picker{position:relative;min-width:0}
+    .country-select-native{display:none!important}
+    .country-dd-btn{width:100%;min-height:48px;border:1px solid #d8e1ee;background:#fff;border-radius:12px;padding:10px 10px;color:#0b1526;outline:0;display:flex;align-items:center;gap:8px;cursor:pointer;transition:border .15s,box-shadow .15s;white-space:nowrap}
+    .country-dd-btn:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,153,58,.15)}
+    .country-dd-btn:hover{border-color:#c9993a;background:#fffaf0}
+    .country-btn-code{font-weight:900;font-size:14px;color:#0b1526;letter-spacing:-.02em}
+    .country-caret{margin-left:auto;color:#64748b;font-size:11px;transition:transform .15s}.country-picker.open .country-caret{transform:rotate(180deg)}
+    .country-dd-menu{display:none;position:absolute;left:0;top:calc(100% + 6px);width:282px;max-width:calc(100vw - 44px);max-height:260px;overflow:auto;background:#fff;border:1px solid #d8e1ee;border-radius:14px;box-shadow:0 20px 50px rgba(15,23,42,.18);padding:6px;z-index:80}
+    .country-picker.open .country-dd-menu{display:block}
+    .country-dd-option{width:100%;border:0;background:#fff;border-radius:10px;display:flex;align-items:center;gap:9px;padding:9px 10px;cursor:pointer;color:#0b1526;text-align:left}
+    .country-dd-option:hover,.country-dd-option[aria-selected="true"]{background:#fff4dc}
+    .country-dd-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:750;color:#26364d}
+    .country-dd-code{font-size:12px;font-weight:900;color:#0b1526;white-space:nowrap;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;padding:3px 7px}
+    .flag-css{position:relative;display:inline-block;width:28px;height:20px;border-radius:4px;overflow:hidden;box-shadow:0 0 0 1px rgba(15,23,42,.16);background:#eef2f7;flex:0 0 28px}
+    .flag-br{background:#009c3b}.flag-br:before{content:"";position:absolute;left:50%;top:50%;width:17px;height:17px;background:#ffdf00;transform:translate(-50%,-50%) rotate(45deg)}.flag-br:after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;background:#002776;border-radius:50%;transform:translate(-50%,-50%)}
+    .flag-us{background:repeating-linear-gradient(to bottom,#b22234 0 1.54px,#fff 1.54px 3.08px)}.flag-us:before{content:"";position:absolute;left:0;top:0;width:12px;height:10.8px;background:#3c3b6e}.flag-us:after{content:"";position:absolute;left:2px;top:2px;width:1.8px;height:1.8px;background:#fff;border-radius:50%;box-shadow:4px 0 #fff,8px 0 #fff,2px 3px #fff,6px 3px #fff,10px 3px #fff,0 6px #fff,4px 6px #fff,8px 6px #fff}
+    .flag-pt{background:linear-gradient(90deg,#006600 0 42%,#ff0000 42%)}.flag-pt:after{content:"";position:absolute;left:9px;top:6px;width:7px;height:7px;border-radius:50%;background:#ffcc00;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+    .flag-gb{background:#012169}.flag-gb:before{content:"";position:absolute;inset:0;background:linear-gradient(33deg,transparent 0 42%,#fff 42% 48%,#c8102e 48% 53%,#fff 53% 59%,transparent 59%),linear-gradient(147deg,transparent 0 42%,#fff 42% 48%,#c8102e 48% 53%,#fff 53% 59%,transparent 59%)}.flag-gb:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0 38%,#fff 38% 45%,#c8102e 45% 55%,#fff 55% 62%,transparent 62%),linear-gradient(0deg,transparent 0 35%,#fff 35% 43%,#c8102e 43% 57%,#fff 57% 65%,transparent 65%)}
+    .flag-es{background:linear-gradient(to bottom,#aa151b 0 25%,#f1bf00 25% 75%,#aa151b 75%)}
+    .flag-it{background:linear-gradient(90deg,#009246 0 33.33%,#fff 33.33% 66.66%,#ce2b37 66.66%)}
+    .flag-de{background:linear-gradient(to bottom,#000 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
+    .flag-fr{background:linear-gradient(90deg,#0055a4 0 33.33%,#fff 33.33% 66.66%,#ef4135 66.66%)}
+    .flag-ae{background:linear-gradient(to bottom,#009a44 0 33.33%,#fff 33.33% 66.66%,#000 66.66%)}.flag-ae:before{content:"";position:absolute;left:0;top:0;width:8px;height:100%;background:#ce1126}
     .choices{display:grid;gap:9px}
     .choice{display:flex;align-items:flex-start;gap:10px;border:1px solid #d8e1ee;border-radius:14px;padding:12px;cursor:pointer;background:#fff;transition:.15s ease;color:#26364d}
     .choice:hover{border-color:#c9993a;background:#fffaf0}
@@ -168,17 +195,38 @@
             <div class="step" data-step="1">
               <h2 class="q">Qual é seu WhatsApp?</h2>
               <div class="phone-row">
-                <label class="field"><span class="lab">País</span><select id="countryCode" aria-label="Código do país">
-                  <option value="55" data-country="BR" selected>🇧🇷 +55 Brasil</option>
-                  <option value="1" data-country="US">🇺🇸 +1 EUA</option>
-                  <option value="351" data-country="PT">🇵🇹 +351 Portugal</option>
-                  <option value="44" data-country="GB">🇬🇧 +44 Reino Unido</option>
-                  <option value="34" data-country="ES">🇪🇸 +34 Espanha</option>
-                  <option value="39" data-country="IT">🇮🇹 +39 Itália</option>
-                  <option value="49" data-country="DE">🇩🇪 +49 Alemanha</option>
-                  <option value="33" data-country="FR">🇫🇷 +33 França</option>
-                  <option value="971" data-country="AE">🇦🇪 +971 Emirados</option>
-                </select></label>
+                <div class="field phone-country-field">
+                  <span class="lab">País</span>
+                  <div class="country-picker" id="countryPicker">
+                    <button type="button" class="country-dd-btn" id="countryBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="countryMenu" aria-label="Selecionar país do WhatsApp">
+                      <span class="flag-css flag-br" id="countryBtnFlag" aria-hidden="true"></span>
+                      <span class="country-btn-code" id="countryBtnCode">+55</span>
+                      <span class="country-caret" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="country-dd-menu" id="countryMenu" role="listbox" aria-label="Escolha o país do WhatsApp">
+                      <button type="button" class="country-dd-option" role="option" aria-selected="true" data-code="55" data-country="BR" data-name="Brasil" data-flag="br"><span class="flag-css flag-br" aria-hidden="true"></span><span class="country-dd-code">+55</span><span class="country-dd-name">Brasil</span></button>
+                      <button type="button" class="country-dd-option" role="option" aria-selected="false" data-code="1" data-country="US" data-name="Estados Unidos" data-flag="us"><span class="flag-css flag-us" aria-hidden="true"></span><span class="country-dd-code">+1</span><span class="country-dd-name">Estados Unidos</span></button>
+                      <button type="button" class="country-dd-option" role="option" aria-selected="false" data-code="351" data-country="PT" data-name="Portugal" data-flag="pt"><span class="flag-css flag-pt" aria-hidden="true"></span><span class="country-dd-code">+351</span><span class="country-dd-name">Portugal</span></button>
+                      <button type="button" class="country-dd-option" role="option" aria-selected="false" data-code="44" data-country="GB" data-name="Reino Unido" data-flag="gb"><span class="flag-css flag-gb" aria-hidden="true"></span><span class="country-dd-code">+44</span><span class="country-dd-name">Reino Unido</span></button>
+                      <button type="button" class="country-dd-option" role="option" aria-selected="false" data-code="34" data-country="ES" data-name="Espanha" data-flag="es"><span class="flag-css flag-es" aria-hidden="true"></span><span class="country-dd-code">+34</span><span class="country-dd-name">Espanha</span></button>
+                      <button type="button" class="country-dd-option" role="option" aria-selected="false" data-code="39" data-country="IT" data-name="Itália" data-flag="it"><span class="flag-css flag-it" aria-hidden="true"></span><span class="country-dd-code">+39</span><span class="country-dd-name">Itália</span></button>
+                      <button type="button" class="country-dd-option" role="option" aria-selected="false" data-code="49" data-country="DE" data-name="Alemanha" data-flag="de"><span class="flag-css flag-de" aria-hidden="true"></span><span class="country-dd-code">+49</span><span class="country-dd-name">Alemanha</span></button>
+                      <button type="button" class="country-dd-option" role="option" aria-selected="false" data-code="33" data-country="FR" data-name="França" data-flag="fr"><span class="flag-css flag-fr" aria-hidden="true"></span><span class="country-dd-code">+33</span><span class="country-dd-name">França</span></button>
+                      <button type="button" class="country-dd-option" role="option" aria-selected="false" data-code="971" data-country="AE" data-name="Emirados Árabes" data-flag="ae"><span class="flag-css flag-ae" aria-hidden="true"></span><span class="country-dd-code">+971</span><span class="country-dd-name">Emirados Árabes</span></button>
+                    </div>
+                    <select id="countryCode" class="country-select-native" aria-hidden="true" tabindex="-1">
+                      <option value="55" data-country="BR" selected>+55 Brasil</option>
+                      <option value="1" data-country="US">+1 Estados Unidos</option>
+                      <option value="351" data-country="PT">+351 Portugal</option>
+                      <option value="44" data-country="GB">+44 Reino Unido</option>
+                      <option value="34" data-country="ES">+34 Espanha</option>
+                      <option value="39" data-country="IT">+39 Itália</option>
+                      <option value="49" data-country="DE">+49 Alemanha</option>
+                      <option value="33" data-country="FR">+33 França</option>
+                      <option value="971" data-country="AE">+971 Emirados Árabes</option>
+                    </select>
+                  </div>
+                </div>
                 <label class="field"><span class="lab">Número</span><input id="phone" inputmode="tel" autocomplete="tel-national" placeholder="(11) 99999-9999" required></label>
               </div>
               <p class="fine" style="color:#64748b;margin:4px 0 0">Use um número que você realmente acompanha. Não haverá abertura automática do WhatsApp.</p>
@@ -314,7 +362,7 @@
         <p>O envio deste formulário não representa uma aplicação formal completa de financiamento e não obriga qualquer parte a conceder ou aceitar crédito. Qualquer financiamento está sujeito à análise de crédito, renda, ativos, documentação, origem de recursos, avaliação do imóvel, título, seguro, finalidade de uso, elegibilidade do programa, underwriting, critérios do investidor/lender, leis aplicáveis e demais condições exigidas.</p>
         <p>Taxas, termos, programas, requisitos, valores de entrada, custos, prazos, elegibilidade e disponibilidade podem mudar sem aviso prévio. Nenhuma taxa, condição ou programa é garantido até que todos os requisitos aplicáveis sejam satisfeitos e, quando aplicável, haja confirmação formal por escrito.</p>
         <p>Não há garantia de aprovação, taxa de juros, retorno financeiro, valorização imobiliária, renda de aluguel, ocupação, disponibilidade de imóveis ou resultado específico. Se você estiver avaliando investimento, tributação, estrutura societária, imigração, sucessão ou remessa internacional, consulte profissionais qualificados nessas áreas.</p>
-        <p class="legal-note">Você pode verificar informações de licenciamento no NMLS Consumer Access: <a href="https://nmlsconsumeraccess.org/TuringTestPage.aspx?ReturnUrl=/Home.aspx/SubSearch" target="_blank" rel="noopener noreferrer">www.nmlsconsumeraccess.org</a>.</p>
+        <p class="legal-note">Você pode verificar informações de licenciamento no NMLS Consumer Access: <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener noreferrer">www.nmlsconsumeraccess.org</a>.</p>
         <ul class="legal-list">
           <li>Esta página é destinada a uma análise inicial de perfil e não substitui documentos oficiais de crédito.</li>
           <li>Atendimento sujeito às licenças, políticas internas, disponibilidade de produtos e regras aplicáveis.</li>
@@ -349,6 +397,17 @@
     const TRACKING_KEYS = ["gclid","gbraid","wbraid","campaign","adgroup","keyword","utm_source","utm_medium","utm_campaign","utm_content","utm_term"];
     const TRACK_STORAGE_KEY = "nexlead_ads_tracking";
     const COUNTRY_NAMES = {55:"Brasil",1:"Estados Unidos",351:"Portugal",44:"Reino Unido",34:"Espanha",39:"Itália",49:"Alemanha",33:"França",971:"Emirados Árabes"};
+    const COUNTRY_META = {
+      55:{country:"BR",name:"Brasil",flag:"br",placeholder:"(11) 99999-9999"},
+      1:{country:"US",name:"Estados Unidos",flag:"us",placeholder:"(407) 555-1234"},
+      351:{country:"PT",name:"Portugal",flag:"pt",placeholder:"912 345 678"},
+      44:{country:"GB",name:"Reino Unido",flag:"gb",placeholder:"07123 456789"},
+      34:{country:"ES",name:"Espanha",flag:"es",placeholder:"612 345 678"},
+      39:{country:"IT",name:"Itália",flag:"it",placeholder:"312 345 6789"},
+      49:{country:"DE",name:"Alemanha",flag:"de",placeholder:"1512 3456789"},
+      33:{country:"FR",name:"França",flag:"fr",placeholder:"06 12 34 56 78"},
+      971:{country:"AE",name:"Emirados Árabes",flag:"ae",placeholder:"50 123 4567"}
+    };
 
     const qs = new URLSearchParams(location.search);
     const incoming = {};
@@ -381,6 +440,42 @@
     function showError(msg){ err.textContent = msg; err.style.display = "block"; }
     function clearError(){ err.textContent = ""; err.style.display = "none"; }
 
+
+
+    function setupCountryPicker(){
+      const picker = document.getElementById("countryPicker");
+      const btn = document.getElementById("countryBtn");
+      const btnFlag = document.getElementById("countryBtnFlag");
+      const btnCode = document.getElementById("countryBtnCode");
+      const menu = document.getElementById("countryMenu");
+      const select = document.getElementById("countryCode");
+      const phoneInput = document.getElementById("phone");
+      if (!picker || !btn || !btnFlag || !btnCode || !menu || !select) return;
+
+      function close(){ picker.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
+      function open(){ picker.classList.add("open"); btn.setAttribute("aria-expanded", "true"); }
+      function apply(option){
+        if (!option) return;
+        const code = option.dataset.code;
+        const flag = option.dataset.flag || COUNTRY_META[code]?.flag || "br";
+        select.value = code;
+        btnCode.textContent = "+" + code;
+        btnFlag.className = "flag-css flag-" + flag;
+        menu.querySelectorAll(".country-dd-option").forEach(o => o.setAttribute("aria-selected", o === option ? "true" : "false"));
+        if (phoneInput && COUNTRY_META[code]?.placeholder) phoneInput.placeholder = COUNTRY_META[code].placeholder;
+        close();
+      }
+
+      btn.addEventListener("click", () => picker.classList.contains("open") ? close() : open());
+      menu.addEventListener("click", e => {
+        const option = e.target.closest(".country-dd-option");
+        if (option) apply(option);
+      });
+      document.addEventListener("click", e => { if (!picker.contains(e.target)) close(); });
+      document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+      apply(menu.querySelector(`[data-code="${select.value}"]`) || menu.querySelector(".country-dd-option"));
+    }
+
     function phonePayload(){
       const select = document.getElementById("countryCode");
       const code = select.value;
@@ -390,8 +485,8 @@
       return {
         e164: "+" + code + national,
         display: "+" + code + " " + national,
-        country: select.selectedOptions[0]?.dataset.country || "",
-        country_name: COUNTRY_NAMES[code] || "",
+        country: select.selectedOptions[0]?.dataset.country || COUNTRY_META[code]?.country || "",
+        country_name: COUNTRY_NAMES[code] || COUNTRY_META[code]?.name || "",
         country_dial_code: "+" + code,
         national
       };
@@ -527,6 +622,7 @@
       }
     });
 
+    setupCountryPicker();
     render();
   })();
   </script>
