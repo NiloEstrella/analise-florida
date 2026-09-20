@@ -1,45 +1,736 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Política de Privacidade | Team Estrella</title>
-<style>body{font-family:Inter,system-ui,sans-serif;max-width:800px;margin:40px auto;padding:0 20px;line-height:1.7;color:#1e293b}h1{font-size:28px}h2{font-size:18px;margin-top:28px}a{color:#b7790e}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade | Team Estrella · Acrisure Mortgage</title>
+<meta name="description" content="Política de Privacidade do Team Estrella | Nilo Estrella, NMLS #2802165, em atuação pela Acrisure Mortgage, LLC (NMLS #152859). Informações sobre coleta, uso, segurança e tratamento de dados pessoais.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #070f1d;
+  --navy2: #0a1424;
+  --navy3: #0f1c31;
+  --navy4: #14243f;
+  --gold: #c9993a;
+  --gold2: #e7b95c;
+  --gold3: #f6e3b8;
+  --teal: #4fd1c5;
+  --ink: #eef2f8;
+  --ink-dim: #9fb0c8;
+  --ink-faint: #6c7d99;
+  --line: rgba(255, 255, 255, .09);
+  --line-gold: rgba(201, 153, 58, .28);
+  --glass: rgba(255, 255, 255, .045);
+  --card-bg: rgba(15, 28, 49, .75);
+  --font-h: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-b: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-b);
+  color: var(--ink);
+  background: var(--navy);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fundo com aurora suave */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1000px 700px at 85% -10%, rgba(201, 153, 58, .12), transparent 60%),
+    radial-gradient(900px 700px at -5% 20%, rgba(52, 92, 170, .22), transparent 60%),
+    radial-gradient(1100px 800px at 50% 110%, rgba(20, 36, 63, .35), transparent 70%),
+    linear-gradient(180deg, #070f1d 0%, #0a1424 50%, #081120 100%);
+}
+
+/* Barra superior */
+#navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .75rem clamp(16px, 4vw, 48px);
+  background: rgba(8, 15, 30, .92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.logo-img {
+  height: 46px;
+  width: auto;
+  filter: drop-shadow(0 3px 12px rgba(201, 153, 58, .22));
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 1.22rem;
+  color: #fff;
+}
+.logo-sub {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--gold2);
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem 1.1rem;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(201, 153, 58, .35);
+  border-radius: 12px;
+  color: var(--ink);
+  font-size: .88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: .2s;
+}
+.btn-back:hover {
+  background: rgba(201, 153, 58, .14);
+  border-color: var(--gold2);
+  color: #fff;
+  transform: translateX(-2px);
+}
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .6rem 1.1rem;
+  background: linear-gradient(135deg, var(--gold2), var(--gold));
+  color: #140d02;
+  font-weight: 700;
+  font-size: .88rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: .22s;
+  box-shadow: 0 4px 18px rgba(201, 153, 58, .25);
+}
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 153, 58, .38);
+}
+
+/* Layout do Conteúdo */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px clamp(16px, 4vw, 32px) 96px;
+}
+
+/* Breadcrumb & Header do Artigo */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .84rem;
+  color: var(--ink-faint);
+  margin-bottom: 1.2rem;
+}
+.breadcrumb a {
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: color .2s;
+}
+.breadcrumb a:hover {
+  color: var(--gold2);
+}
+.doc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: rgba(201, 153, 58, .12);
+  border: 1px solid rgba(201, 153, 58, .3);
+  color: var(--gold2);
+  font-size: .76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  margin-bottom: .9rem;
+}
+.doc-title {
+  font-family: var(--font-h);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: .75rem;
+  letter-spacing: -.02em;
+}
+.doc-subtitle {
+  font-size: 1.05rem;
+  color: var(--ink-dim);
+  margin-bottom: 1.8rem;
+}
+
+/* Caixa Institucional de Abertura */
+.entity-box {
+  background: linear-gradient(160deg, rgba(20, 36, 63, .65), rgba(15, 28, 49, .45));
+  border: 1px solid var(--line-gold);
+  border-radius: 18px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 2.4rem;
+  backdrop-filter: blur(10px);
+}
+.entity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  font-size: .88rem;
+}
+.entity-item {
+  display: flex;
+  flex-direction: column;
+}
+.entity-label {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink-faint);
+  margin-bottom: .25rem;
+}
+.entity-val {
+  color: var(--ink);
+  font-weight: 600;
+}
+.entity-val a {
+  color: var(--gold2);
+  text-decoration: none;
+}
+.entity-val a:hover {
+  text-decoration: underline;
+}
+
+/* Índice de navegação rápida */
+.toc-box {
+  background: rgba(10, 20, 36, .55);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 3rem;
+}
+.toc-title {
+  font-family: var(--font-h);
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--gold2);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .9rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.toc-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: .5rem 1.2rem;
+  font-size: .86rem;
+}
+.toc-list a {
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: .18s;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.toc-list a:hover {
+  color: var(--gold3);
+  transform: translateX(3px);
+}
+
+/* Seções de Texto */
+.policy-section {
+  margin-bottom: 2.8rem;
+  scroll-margin-top: 100px;
+}
+.policy-section h2 {
+  font-family: var(--font-h);
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+}
+.policy-section h2 .sec-num {
+  color: var(--gold2);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.policy-section h3 {
+  font-family: var(--font-h);
+  font-size: 1.05rem;
+  color: var(--gold3);
+  margin: 1.4rem 0 .6rem;
+}
+.policy-section p {
+  color: var(--ink-dim);
+  margin-bottom: 1.1rem;
+  font-size: .96rem;
+}
+.policy-section p strong {
+  color: var(--ink);
+}
+.policy-section ul, .policy-section ol {
+  margin: .6rem 0 1.2rem 1.4rem;
+  color: var(--ink-dim);
+  font-size: .95rem;
+}
+.policy-section li {
+  margin-bottom: .55rem;
+  line-height: 1.65;
+}
+.policy-section li strong {
+  color: var(--ink);
+}
+
+/* Caixas de Destaque */
+.callout {
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  margin: 1.4rem 0;
+  font-size: .92rem;
+  line-height: 1.65;
+}
+.callout-gold {
+  background: rgba(201, 153, 58, .09);
+  border: 1px solid rgba(201, 153, 58, .35);
+  color: var(--ink);
+}
+.callout-gold strong {
+  color: var(--gold2);
+}
+.callout-blue {
+  background: rgba(30, 60, 110, .25);
+  border: 1px solid rgba(79, 209, 197, .3);
+  color: var(--ink);
+}
+.callout-blue strong {
+  color: var(--teal);
+}
+.callout-alert {
+  background: rgba(180, 40, 40, .14);
+  border: 1px solid rgba(240, 90, 90, .35);
+  color: var(--ink);
+}
+.callout-alert strong {
+  color: #ff9d9d;
+}
+
+/* Links no corpo */
+.policy-section a {
+  color: var(--gold2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .2s;
+}
+.policy-section a:hover {
+  color: var(--gold3);
+}
+
+/* Rodapé */
+footer {
+  position: relative;
+  z-index: 1;
+  background: #040913;
+  border-top: 1px solid var(--line);
+  padding: 48px clamp(16px, 4vw, 48px) 36px;
+  color: var(--ink-faint);
+  font-size: .84rem;
+}
+.footer-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.4rem;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  list-style: none;
+}
+.footer-nav a {
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-nav a:hover {
+  color: var(--gold2);
+}
+.footer-legal-text {
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.ehl-wrap {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--ink-dim);
+}
+.ehl-logo {
+  height: 28px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  #navbar { min-height: 70px; padding: .6rem 1rem; }
+  .logo-text { font-size: 1.05rem; }
+  .logo-img { height: 38px; }
+  .btn-contact { display: none; }
+  .doc-title { font-size: 1.9rem; }
+  .toc-list { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
-<h1>Política de Privacidade - Team Estrella / Nilo Estrella</h1>
-<p><strong>Última atualização:</strong> 16 de Setembro de 2026</p>
-<p><strong>Responsável:</strong> Nilo Estrella de Castro, Mortgage Loan Originator NMLS #2802165, atuando pela Acrisure Mortgage, LLC NMLS #152859.</p>
-<p><strong>Contato:</strong> <a href="mailto:contato@niloestrella.com.br" class="__cf_email__" data-cfemail="a7c4c8c9d3c6d3c8e7c9cecbc8c2d4d3d5c2cbcbc689c4c8ca">contato@niloestrella.com.br</a> | +1 (949) 519-7902</p>
 
-<h2>1. Quais dados coletamos</h2>
-<p>Coletamos dados fornecidos voluntariamente no formulário de análise inicial: nome, sobrenome, WhatsApp (com DDI), e-mail, objetivo de investimento, faixa de orçamento, prazo, situação de capital e região de interesse na Flórida. Também coletamos dados técnicos como IP, URL de origem, gclid, utm_source, utm_medium, etc. para fins de atribuição de marketing.</p>
+<div class="bg"></div>
 
-<h2>2. Finalidade</h2>
-<p>Os dados são usados exclusivamente para: (a) realizar análise inicial gratuita de perfil para financiamento imobiliário nos EUA; (b) entrar em contato manualmente para orientação; (c) cumprimento de obrigações legais americanas de registro de contato. Não vendemos seus dados.</p>
+<!-- NAV -->
+<nav id="navbar">
+  <a class="logo" href="https://www.acrisuremortgage.com/nestrella">
+    <img class="logo-img" src="assets/acrisure-logo-white.png" alt="Acrisure Mortgage">
+    <span class="logo-text">Acrisure Mortgage<span class="logo-sub">Team Estrella</span></span>
+  </a>
+  <div class="nav-actions">
+    <a class="btn-back" href="https://www.niloestrella.com.br">← Voltar ao Início</a>
+    <a class="btn-contact" href="https://www.niloestrella.com.br#contact">Falar Conosco</a>
+  </div>
+</nav>
 
-<h2>3. Base legal (LGPD)</h2>
-<p>Consentimento (art. 7º, I) fornecido ao marcar o checkbox no formulário. Você pode revogar a qualquer momento via e-mail.</p>
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="content-wrapper">
+  
+  <div class="breadcrumb">
+    <a href="https://www.niloestrella.com.br">Início</a>
+    <span>/</span>
+    <span>Jurídico</span>
+    <span>/</span>
+    <span style="color:var(--gold2)">Política de Privacidade</span>
+  </div>
 
-<h2>4. Onde os dados são armazenados</h2>
-<p>Armazenamento em sistema de CRM com servidor nos EUA (Nexlead / DuckDNS). Medidas de segurança técnicas e administrativas são aplicadas.</p>
+  <span class="doc-badge">Aviso de Privacidade Oficial</span>
+  <h1 class="doc-title">Política de Privacidade</h1>
+  <p class="doc-subtitle">Team Estrella · Nilo Estrella (NMLS #2802165) | Acrisure Mortgage, LLC (NMLS #152859)</p>
 
-<h2>5. Compartilhamento</h2>
-<p>Dados podem ser compartilhados com Acrisure Mortgage, LLC para fins de verificação de elegibilidade e com prestadores de serviço de e-mail e telefonia. Não compartilhamos com instituições financeiras brasileiras, pois não oferecemos crédito no Brasil.</p>
+  <!-- Caixa de Identificação Institucional -->
+  <div class="entity-box">
+    <div class="entity-grid">
+      <div class="entity-item">
+        <span class="entity-label">Originação & Atendimento</span>
+        <span class="entity-val">Nilo Estrella · Team Estrella</span>
+      </div>
+      <div class="entity-item">
+        <span class="entity-label">Licenciamento Hipotecário</span>
+        <span class="entity-val">MLO NMLS #2802165 (Flórida)</span>
+      </div>
+      <div class="entity-item">
+        <span class="entity-label">Credor / Instituição Vinculada</span>
+        <span class="entity-val">Acrisure Mortgage, LLC · NMLS #152859</span>
+      </div>
+      <div class="entity-item">
+        <span class="entity-label">Endereço do Escritório</span>
+        <span class="entity-val">132 W Plant St, Suite 210 · Winter Garden, FL 34787</span>
+      </div>
+      <div class="entity-item">
+        <span class="entity-label">Contato Direto</span>
+        <span class="entity-val"><a href="tel:19495197902">(949) 519-7902</a> · <a href="mailto:contato@niloestrella.com.br">contato@niloestrella.com.br</a></span>
+      </div>
+      <div class="entity-item">
+        <span class="entity-label">Última Atualização</span>
+        <span class="entity-val">19 de setembro de 2026</span>
+      </div>
+    </div>
+  </div>
 
-<h2>6. Seus direitos</h2>
-<p>Você pode solicitar acesso, correção, exclusão ou revogação do consentimento pelo e-mail <a href="mailto:contato@niloestrella.com.br" class="__cf_email__" data-cfemail="98fbf7f6ecf9ecf7d8f6f1f4f7fdebeceafdf4f4f9b6fbf7f5">contato@niloestrella.com.br</a>.</p>
+  <!-- Índice Rápido -->
+  <div class="toc-box">
+    <div class="toc-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+      Índice de Seções
+    </div>
+    <ul class="toc-list">
+      <li><a href="#sec-1">1. Escopo e Identificação do Responsável</a></li>
+      <li><a href="#sec-2">2. Visitantes Internacionais e Brasileiros</a></li>
+      <li><a href="#sec-3">3. Menores de 18 Anos</a></li>
+      <li><a href="#sec-4">4. Dados Pessoais Coletados</a></li>
+      <li><a href="#sec-5">5. Dados Coletados Automaticamente e Cookies</a></li>
+      <li><a href="#sec-6">6. Como Utilizamos os Dados</a></li>
+      <li><a href="#sec-7">7. Compartilhamento de Dados</a></li>
+      <li><a href="#sec-8">8. Segurança da Informação</a></li>
+      <li><a href="#sec-9">9. Proteção do Crédito: Opt-Out Prescreen</a></li>
+      <li><a href="#sec-10">10. Direitos dos Residentes da Califórnia (CCPA)</a></li>
+      <li><a href="#sec-11">11. Links para Sites de Terceiros</a></li>
+      <li><a href="#sec-12">12. Seus Direitos como Titular de Dados</a></li>
+      <li><a href="#sec-13">13. Alterações nesta Política</a></li>
+      <li><a href="#sec-14">14. Canal Oficial de Contato e DPO</a></li>
+    </ul>
+  </div>
 
-<h2>7. Cookies e Google</h2>
-<p>Usamos Google Tag Manager (GTM-PQLJBCM6) e Google Ads para medir conversão (evento generate_lead e lead_crm). Você pode desativar cookies no navegador.</p>
+  <!-- SEÇÃO 1 -->
+  <section class="policy-section" id="sec-1">
+    <h2><span class="sec-num">1.</span> Escopo e Identificação do Responsável</h2>
+    <p>O <strong>Team Estrella</strong>, sob liderança de <strong>Nilo Estrella</strong> (Mortgage Loan Originator, NMLS #2802165), operando como originador de empréstimos residenciais devidamente licenciado e vinculado à <strong>Acrisure Mortgage, LLC</strong> (NMLS #152859) (doravante referidos em conjunto como "Team Estrella", "nós", "nosso" ou "empresa"), trata os dados pessoais fornecidos por meio deste website, simuladores e canais oficiais de comunicação em estrita consonância com esta Política de Privacidade ("Política").</p>
+    <p>Esta Política aplica-se ao tratamento de informações coletadas de forma digital (por meio do site, WhatsApp, e-mail e formulários) ou obtidas em consultas de atendimento direto. Ao utilizar este Site ou submeter informações para consulta de viabilidade hipotecária, você declara ter ciência dos termos aqui estabelecidos.</p>
+    
+    <div class="callout callout-gold">
+      <strong>Relação Operacional:</strong> O Team Estrella atua na prospecção, atendimento personalizado, consultoria e montagem preliminar de dossiês de empréstimo. O processamento formal, a análise de risco (*underwriting*), a concessão final do crédito e o fechamento contratual são realizados pela <strong>Acrisure Mortgage, LLC</strong>, instituição credora nacional (*direct lender*).
+    </div>
+  </section>
 
-<h2>8. Serviço prestado</h2>
-<p>Serviço de intermediação de financiamento imobiliário nos Estados Unidos da América, regido por leis americanas. Não se trata de oferta de crédito no Brasil e não requer autorização do Banco Central do Brasil, CVM, SUSEP ou PREVIC. Financiamento sujeito a análise de crédito, renda, ativos, avaliação do imóvel e underwriting nos EUA. Não há garantia de aprovação, taxa ou retorno.</p>
+  <!-- SEÇÃO 2 -->
+  <section class="policy-section" id="sec-2">
+    <h2><span class="sec-num">2.</span> Visitantes Internacionais e Clientes Brasileiros (Operações nos EUA)</h2>
+    <p>Os serviços de consultoria e originação de financiamento imobiliário fornecidos pelo Team Estrella referem-se exclusivamente a imóveis situados nos Estados Unidos da América (com foco no Estado da Flórida) e são integralmente regidos pelas leis federais e estaduais norte-americanas, tais como o <em>Gramm-Leach-Bliley Act (GLBA)</em>, o <em>Fair Credit Reporting Act (FCRA)</em> e o <em>Equal Credit Opportunity Act (ECOA)</em>.</p>
+    <p>Se você reside no Brasil ou em outro país fora dos EUA e acessa este Site para avaliar opções de financiamento imobiliário (como compra de casa de férias, investimento para locação ou programas de <em>Foreign National</em>):</p>
+    <ul>
+      <li>O envio de seus dados é realizado de maneira estritamente voluntária e com consentimento explícito para fins de análise preliminar de crédito imobiliário em território norte-americano;</li>
+      <li>Nossas operações não constituem oferta de crédito no Sistema Financeiro Nacional brasileiro, não captam recursos no Brasil e não estão sujeitas à regulação do Banco Central do Brasil (BACEN) ou da CVM;</li>
+      <li>Adotamos práticas de governança de dados que respeitam os princípios universais de privacidade, transparência, limitação de finalidade e segurança, mantendo conformidade com as diretrizes da Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018) no relacionamento com cidadãos brasileiros.</li>
+    </ul>
+  </section>
 
-<h2>9. Contato do Encarregado</h2>
-<p>Nilo Estrella - <a href="mailto:contato@niloestrella.com.br" class="__cf_email__" data-cfemail="3b5854554f5a4f547b555257545e484f495e57575a15585456">contato@niloestrella.com.br</a></p>
+  <!-- SEÇÃO 3 -->
+  <section class="policy-section" id="sec-3">
+    <h2><span class="sec-num">3.</span> Menores de 18 Anos</h2>
+    <p>Este Site destina-se exclusivamente a pessoas físicas com idade igual ou superior a 18 (dezoito) anos dotadas de plena capacidade civil. Não solicitamos nem coletamos intencionalmente informações de menores de idade. Caso tomemos conhecimento de que dados de um menor foram submetidos sem a devida representação legal, tais informações serão prontamente excluídas de nossas bases de dados.</p>
+  </section>
 
-<p><a href="https://www.niloestrella.com.br/">Voltar para análise</a></p>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3c956b9cc8ac73d',t:'MTc4OTY2MDk4Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","spa":2}' crossorigin="anonymous"></script>
+  <!-- SEÇÃO 4 -->
+  <section class="policy-section" id="sec-4">
+    <h2><span class="sec-num">4.</span> Dados Pessoais Coletados</h2>
+    <p>Coletamos dados que identificam ou permitem identificar um indivíduo, categorizados conforme as seguintes interações:</p>
+    
+    <h3>A. Formulários de Consulta Preliminar e Contato</h3>
+    <p>Ao solicitar uma análise de viabilidade, utilizar nossa calculadora ou preencher o formulário de contato, você pode nos fornecer: nome completo, endereço de e-mail, número de telefone celular / WhatsApp, país de residência, finalidade do empréstimo (compra de moradia primária, segunda residência, imóvel de investimento para renda ou refinanciamento), faixa de valor do imóvel e capital estimado disponível para entrada.</p>
+
+    <h3>B. Solicitação de Pré-Qualificação e Crédito Formal</h3>
+    <p>Para fins de pré-qualificação formal ou submissão à aprovação da Acrisure Mortgage, LLC, dados adicionais de natureza financeira e cadastral são solicitados com a sua prévia e expressa autorização, incluindo:</p>
+    <ul>
+      <li>Endereço residencial e histórico de moradia dos últimos anos;</li>
+      <li>Data de nascimento, estado civil e composição familiar (co-devedor);</li>
+      <li>Documentos de identificação: <em>Social Security Number (SSN)</em> ou <em>ITIN</em> para residentes/cidadãos dos EUA; ou cópia de Passaporte e visto válido para clientes internacionais (*Foreign National*);</li>
+      <li>Histórico de emprego, holerites (*pay stubs*), declarações de imposto de renda (*W-2*, *1040* ou IRPF do Brasil para clientes estrangeiros);</li>
+      <li>Extratos bancários (*bank statements*), lista de ativos, investimentos e passivos financeiros;</li>
+      <li>Histórico de crédito e autorização para consulta de score junto aos birôs competentes.</li>
+    </ul>
+
+    <h3>C. Atendimento e Comunicações Diretas</h3>
+    <p>Registros de mensagens trocadas por WhatsApp, e-mails, notas de consultoria telefônica e eventuais dúvidas enviadas aos nossos originadores para acompanhamento do seu processo.</p>
+  </section>
+
+  <!-- SEÇÃO 5 -->
+  <section class="policy-section" id="sec-5">
+    <h2><span class="sec-num">5.</span> Dados Coletados Automaticamente e Cookies</h2>
+    <p>Quando você navega pelo Site, certos dados técnicos e analíticos não identificáveis diretamente são coletados por meio de ferramentas tecnológicas, principalmente <em>cookies</em> e identificadores de sessão.</p>
+    <p>Um <strong>cookie</strong> é uma pequena cadeia alfanumérica de texto armazenada em seu computador ou dispositivo móvel através do navegador. Os cookies nos permitem reconhecer seu dispositivo em visitas posteriores, guardar parâmetros de cálculo na calculadora de financiamento, prevenir recadastramentos desnecessários em formulários e analisar tendências agregadas de tráfego para aprimorar a estabilidade da navegação.</p>
+    <p><strong>Importante:</strong> Os cookies não contêm dados confidenciais gravados e não possuem capacidade de ler arquivos ou transmitir dados do disco rígido do seu computador. Você pode configurar seu navegador a qualquer momento para recusar cookies ou alertá-lo quando um cookie estiver sendo enviado; contudo, algumas funções interativas do Site podem ter sua performance reduzida sem cookies de sessão.</p>
+    <p>Adicionalmente, os servidores web registram automaticamente o <strong>endereço IP</strong> da conexão, tipo de navegador, sistema operacional e páginas requisitadas. Essas informações são tratadas de forma agregada para garantir a segurança da rede, combater tentativas de ataque cibernético e medir a integridade do serviço.</p>
+  </section>
+
+  <!-- SEÇÃO 6 -->
+  <section class="policy-section" id="sec-6">
+    <h2><span class="sec-num">6.</span> Como Utilizamos os Dados Coletados</h2>
+    <p>As informações fornecidas ao Team Estrella são utilizadas exclusivamente para propósitos legítimos e transparentes vinculados à prestação de consultoria hipotecária:</p>
+    <ul>
+      <li><strong>Avaliação de Viabilidade Financeira:</strong> Analisar seu perfil socioeconômico e simular cenários de amortização, prazos e taxas de juros competitivas;</li>
+      <li><strong>Pré-Qualificação e Crédito:</strong> Efetuar verificações preliminares de elegibilidade e, mediante sua prévia autorização expressa, obter relatórios de crédito para encaminhamento ao departamento de <em>underwriting</em> da Acrisure Mortgage, LLC;</li>
+      <li><strong>Atendimento Consultivo:</strong> Entrar em contato via WhatsApp, telefone ou e-mail para responder a dúvidas, apresentar opções de programas de empréstimo (FHA, VA, Convencional, Jumbo, DSCR, Bank Statement, Foreign National) e alinhar os passos da transação;</li>
+      <li><strong>Segurança e Cumprimento Legal:</strong> Atender a exigências regulatórias dos órgãos fiscalizadores do mercado financeiro norte-americano (CFPB, NMLS, agências estaduais) e prevenir fraudes contra o sistema de crédito;</li>
+      <li><strong>Comunicações e Atualizações de Mercado:</strong> Enviar comunicados relevantes sobre movimentações nas taxas de juros americanas ou lembretes sobre sua solicitação. Caso não deseje receber comunicados informativos de marketing, você poderá exercer seu direito de opt-out a qualquer momento através do link contido no rodapé da mensagem ou comunicando nossa equipe.</li>
+    </ul>
+  </section>
+
+  <!-- SEÇÃO 7 -->
+  <section class="policy-section" id="sec-7">
+    <h2><span class="sec-num">7.</span> Compartilhamento de Dados</h2>
+    <p>O Team Estrella não vende, não aluga e não comercializa suas informações pessoais. O compartilhamento ocorre exclusivamente nas seguintes hipóteses estritamente delimitadas:</p>
+    
+    <ol>
+      <li><strong>Com a Acrisure Mortgage, LLC e Afiliadas:</strong> Seus dados são compartilhados com a matriz e equipes operacionais da Acrisure Mortgage, LLC para viabilizar a análise formal de crédito, estruturação de propostas, envio de <em>Loan Estimate</em>, submissão a comitês de crédito e emissão dos documentos finais de fechamento (<em>Closing Disclosure</em>).</li>
+      <li><strong>Prestadores de Serviços Operacionais:</strong> Compartilhamos dados estritamente necessários com empresas terceirizadas que executam funções indispensáveis à operação hipotecária sob obrigações rigorosas de confidencialidade, tais como birôs de crédito (Equifax, Experian, TransUnion), avaliadores imobiliários licenciados (*appraisers*), companhias de seguro e títulos imobiliários (*title & escrow companies*), plataformas seguras de CRM e servidores de nuvem protegidos.</li>
+      <li><strong>Exigências e Permissões Legais:</strong> Podemos divulgar dados pessoais quando intimados judicialmente, em resposta a requisições formais de reguladores financeiros (como o CFPB, NMLS, agências estaduais de regulação bancária), em auditorias obrigatórias ou quando necessário para proteger os direitos, a propriedade e a segurança de nossos clientes, da Acrisure Mortgage ou do público em geral contra fraudes financeiras.</li>
+      <li><strong>Reorganizações Societárias:</strong> Na hipótese de eventual fusão, aquisição ou reorganização empresarial, as informações da carteira de clientes poderão ser transferidas como parte dos ativos do negócio, mantidas as salvaguardas desta Política.</li>
+    </ol>
+
+    <div class="callout callout-gold">
+      <strong>Sigilo Absoluto do Consentimento de SMS:</strong> Se você optou por receber mensagens de texto (SMS ou WhatsApp) de nossa equipe, <strong>seu consentimento e número de telefone permanecerão estritamente confidenciais e JAMAIS serão compartilhados com terceiros</strong> ou parceiros comerciais para fins de marketing ou publicidade.
+    </div>
+
+    <div class="callout callout-blue">
+      <strong>Direito de Recusa do Consumidor (Opt-Out para Terceiros Não Essenciais):</strong> Como consumidor, você tem o direito de nos instruir a não compartilhar seus dados com terceiros não essenciais para fins de marketing, bastando entrar em contato diretamente pelo e-mail <a href="mailto:contato@niloestrella.com.br" style="color:var(--teal)">contato@niloestrella.com.br</a> ou pelo telefone <strong>(949) 519-7902</strong>.
+    </div>
+  </section>
+
+  <!-- SEÇÃO 8 -->
+  <section class="policy-section" id="sec-8">
+    <h2><span class="sec-num">8.</span> Segurança da Informação</h2>
+    <p>O Team Estrella e a Acrisure Mortgage, LLC implementam medidas de segurança físicas, técnicas e administrativas comercialmente razoáveis e alinhadas aos padrões de salvaguarda do setor financeiro (<em>GLBA Safeguards Rule</em>), visando proteger os dados pessoais contra acesso não autorizado, destruição acidental, perda ou alteração indevida.</p>
+    <ul>
+      <li>As transmissões de dados em formulários digitais utilizam protocolos modernos de criptografia de ponta a ponta (SSL/TLS);</li>
+      <li>O acesso aos sistemas internos de informação é restrito apenas aos profissionais que necessitam das informações para executar as etapas de originação e análise do empréstimo;</li>
+      <li><strong>Alerta sobre E-mail Comum:</strong> Mensagens convencionais de correio eletrônico não contam com criptografia estrutural em trânsito. Por esta razão, recomendamos enfaticamente que você <strong>nunca envie senhas bancárias ou números completos de SSN por e-mail comum não criptografado</strong>. O Team Estrella jamais solicitará senhas bancárias por e-mail. Para o envio de extratos e documentação sensível, fornecemos canais seguros ou links criptografados diretos da Acrisure Mortgage.</li>
+    </ul>
+  </section>
+
+  <!-- SEÇÃO 9 -->
+  <section class="policy-section" id="sec-9">
+    <h2><span class="sec-num">9.</span> Proteção do Crédito: Como Evitar Ofertas Indesejadas (Opt-Out Prescreen)</h2>
+    <div class="callout callout-alert">
+      <strong>Aviso de Utilidade Pública aos Solicitantes de Financiamento nos EUA:</strong><br>
+      Quando você solicita um financiamento imobiliário e seu crédito é consultado (*credit pull*), a legislação federal dos Estados Unidos autoriza os birôs de crédito (Equifax, Experian e TransUnion) a vender a informação de que você está no mercado em busca de crédito. Essa prática, conhecida na indústria americana como <em>trigger leads</em>, frequentemente resulta em dezenas de telefonemas, e-mails e mensagens não solicitadas enviadas por outras corretoras ou credores desconhecidos ofertando cartões e empréstimos.
+    </div>
+    <p>Você pode <strong>bloquear preventivamente essas chamadas e e-mails de telemarketing</strong> exercendo seu direito federal de opt-out antes ou durante o processo de aplicação. Esse serviço é gratuito, regulamentado pelo governo federal americano e oficial:</p>
+    <ul>
+      <li><strong>Por Telefone (ligação gratuita nos EUA):</strong> Ligue para <strong>1-888-5-OPTOUT (1-888-567-8688)</strong>;</li>
+      <li><strong>Pela Internet:</strong> Acesse o portal oficial unificado dos birôs de crédito em <strong><a href="https://www.optoutprescreen.com/" target="_blank" rel="noopener">www.optoutprescreen.com</a></strong>.</li>
+    </ul>
+    <p>O cadastro permite optar pelo bloqueio temporário (5 anos) ou definitivo, assegurando sua privacidade e impedindo o assédio telefônico durante a compra da sua casa.</p>
+  </section>
+
+  <!-- SEÇÃO 10 -->
+  <section class="policy-section" id="sec-10">
+    <h2><span class="sec-num">10.</span> Direitos dos Residentes da Califórnia (CCPA / CPRA)</h2>
+    <p>O Código Civil da Califórnia § 1798.83 autoriza os visitantes residentes no Estado da Califórnia a solicitarem esclarecimentos sobre eventuais divulgações de dados pessoais a terceiros para fins de marketing direto durante o ano civil anterior.</p>
+    <p>Adicionalmente, sob a legislação de proteção ao consumidor da Califórnia (CCPA/CPRA), residentes elegíveis têm o direito de requisitar o acesso aos seus dados pessoais coletados, a correção de dados imprecisos, a exclusão nos limites legais e a opção de não ter seus dados comercializados ou compartilhados. Para exercer qualquer um desses direitos, entre em contato através do e-mail <strong><a href="mailto:contato@niloestrella.com.br">contato@niloestrella.com.br</a></strong> ou telefone <strong>(949) 519-7902</strong>.</p>
+  </section>
+
+  <!-- SEÇÃO 11 -->
+  <section class="policy-section" id="sec-11">
+    <h2><span class="sec-num">11.</span> Links para Sites de Terceiros</h2>
+    <p>Este Site pode disponibilizar links ou hiperlinks direcionando para websites externos operados por terceiros (como birôs governamentais, HUD, NMLS Consumer Access, WhatsApp ou portais de parceiros). O Team Estrella e a Acrisure Mortgage, LLC não possuem controle sobre as práticas de privacidade, políticas ou conteúdos desses sites externos. Recomendamos que você leia atentamente a política de privacidade de cada website visitado.</p>
+  </section>
+
+  <!-- SEÇÃO 12 -->
+  <section class="policy-section" id="sec-12">
+    <h2><span class="sec-num">12.</span> Seus Direitos como Titular de Dados</h2>
+    <p>Você tem o direito de nos solicitar a qualquer momento:</p>
+    <ul>
+      <li>Confirmação da existência de tratamento e acesso aos dados pessoais mantidos por nós;</li>
+      <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+      <li>Revogação do consentimento para contatos promocionais ou comunicações consultivas futuras;</li>
+      <li>Eliminação de dados pessoais que não sejam estritamente necessários para o cumprimento de obrigações legais e regulatórias federais norte-americanas (note que leis bancárias americanas exigem a retenção obrigatória de dossiês de crédito por períodos regulamentares mínimos, inclusive após o encerramento da consulta).</li>
+    </ul>
+    <p>Para exercer esses direitos, basta enviar uma solicitação com seu nome completo e telefone de contato para o e-mail oficial indicado na Seção 14.</p>
+  </section>
+
+  <!-- SEÇÃO 13 -->
+  <section class="policy-section" id="sec-13">
+    <h2><span class="sec-num">13.</span> Alterações nesta Política de Privacidade</h2>
+    <p>Reservamo-nos o direito de atualizar ou modificar esta Política de Privacidade a qualquer momento para refletir mudanças regulatórias, jurisprudenciais ou operacionais em nossos serviços. A data da versão mais recente estará sempre identificada no topo desta página. Recomendamos que você revise periodicamente este documento. O uso continuado do Site após a publicação de eventuais revisões constituirá o reconhecimento e a aceitação dos termos atualizados.</p>
+  </section>
+
+  <!-- SEÇÃO 14 -->
+  <section class="policy-section" id="sec-14">
+    <h2><span class="sec-num">14.</span> Canal Oficial de Contato e Encarregado pelo Tratamento de Dados</h2>
+    <p>Se você tiver dúvidas, comentários ou solicitações a respeito desta Política de Privacidade ou sobre como suas informações são tratadas pelo Team Estrella, favor entrar em contato diretamente pelos nossos canais oficiais:</p>
+
+    <div class="entity-box" style="margin-top:1.2rem;">
+      <p style="margin-bottom:.5rem;color:#fff;font-weight:700;font-size:1.02rem;">Team Estrella | Nilo Estrella — Mortgage Loan Originator</p>
+      <p style="margin-bottom:.3rem;"><strong>Responsável:</strong> Nilo Estrella de Castro (NMLS #2802165)</p>
+      <p style="margin-bottom:.3rem;"><strong>Credor Vinculado:</strong> Acrisure Mortgage, LLC (NMLS #152859 · Equal Housing Lender)</p>
+      <p style="margin-bottom:.3rem;"><strong>Endereço Comercial:</strong> 132 W Plant St, Suite 210, Winter Garden, FL 34787, EUA</p>
+      <p style="margin-bottom:.3rem;"><strong>Telefone / WhatsApp:</strong> <a href="tel:19495197902">(949) 519-7902</a></p>
+      <p style="margin-bottom:.3rem;"><strong>E-mail Institucional:</strong> <a href="mailto:nestrella@acrisuremortgage.com">nestrella@acrisuremortgage.com</a></p>
+      <p style="margin-bottom:0;"><strong>E-mail de Contato Direto:</strong> <a href="mailto:contato@niloestrella.com">contato@niloestrella.com</a></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="logo">
+        <img class="logo-img" src="assets/acrisure-logo-white.png" alt="Acrisure Mortgage" style="height:36px;">
+        <span class="logo-text" style="font-size:1.05rem;">Acrisure Mortgage<span class="logo-sub" style="font-size:.65rem;">Team Estrella</span></span>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="https://www.niloestrella.com.br">Início</a></li>
+        <li><a href="https://www.niloestrella.com.br/#programs">Programas</a></li>
+        <li><a href="https://www.niloestrella.com.br/#calculator">Calculadora</a></li>
+        <li><a href="https://www.niloestrella.com.br/termos-de-uso.html">Termos de Uso</a></li>
+        <li><a href="https://www.niloestrella.com.br/politica-de-privacidade.html" style="color:var(--gold2)">Política de Privacidade</a></li>
+        <li><a href="https://www.niloestrella.com.br/#contact">Contato</a></li>
+      </ul>
+    </div>
+
+    <p class="footer-legal-text">
+      <strong>Divulgações Regulamentares e de Licenciamento:</strong> Nilo Estrella (NMLS #2802165) atua como Mortgage Loan Originator pela Acrisure Mortgage, LLC (NMLS #152859), uma instituição de crédito hipotecário devidamente registrada. Endereço da sede corporativa da Acrisure Mortgage, LLC: 189 S. Orange Ave, Suite 970, Orlando, FL 32801 · Tel: (866) 766-8885. Todos os programas de financiamento estão sujeitos à aprovação de crédito, comprovação de renda, avaliação do imóvel e condições de underwriting aplicáveis. As taxas e a disponibilidade dos programas podem ser alteradas sem aviso prévio. Consulte o registro público em <a href="https://www.nmlsconsumeraccess.org/Home.aspx/SubSearch?searchText=2802165" target="_blank" rel="noopener noreferrer" style="color:var(--gold2)">nmlsconsumeraccess.org</a>.
+    </p>
+
+    <div class="footer-bottom">
+      <div>© 2026 Team Estrella · Acrisure Mortgage, LLC. Todos os direitos reservados.</div>
+      <div class="ehl-wrap">
+        <svg viewBox="0 0 34 37" width="22" height="24" aria-hidden="true" fill="currentColor">
+          <path d="M17 .8 0 15v2.4h3.4V36h27.2V17.4H34V15L17 .8Z"/>
+          <rect x="10.5" y="17.5" width="13" height="3.4" fill="#040913"/>
+          <rect x="10.5" y="24" width="13" height="3.4" fill="#040913"/>
+        </svg>
+        <span>Equal Housing Lender</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
