@@ -9,7 +9,7 @@
 </script>
 
 <title>Team Estrella | Acrisure Mortgage</title>
-<meta name="description" content="Team Estrella — Nilo Estrella, NMLS #2802165, at Acrisure Mortgage. Home loans in Central Florida: purchase, refinance, DSCR, bank statement and foreign national programs. Atendimento em português.">
+<meta name="description" content="Team Estrella · Nilo Estrella, NMLS #2802165, at Acrisure Mortgage. Home loans in Central Florida: purchase, refinance, DSCR, bank statement and foreign national programs. Atendimento em português.">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
@@ -76,7 +76,18 @@ section{position:relative; padding:88px 0}
 .logo-img{height:60px; width:auto; flex-shrink:0; filter:drop-shadow(0 4px 16px rgba(201,153,58,.25))}
 .logo-text{display:flex; flex-direction:column; line-height:1.1; font-family:var(--font-h); font-weight:700;
   font-size:1.53rem; color:#fff; white-space:nowrap}
-.logo-sub{font-size:.9rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--gold2)}
+.logo-main{display:inline-flex; align-items:baseline; gap:.32rem}
+.logo-word-white{color:#ffffff}
+.logo-word-gold{
+  color:var(--gold2);
+  background:linear-gradient(135deg, #fce09c 0%, #e7b95c 60%, #c9993a 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 2px 10px rgba(201,153,58,.35));
+}
+.logo-sub{font-size:.82rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-dim); transition:color .2s}
+.logo:hover .logo-word-gold{filter:drop-shadow(0 2px 14px rgba(231,185,92,.6))}
+.logo:hover .logo-sub{color:var(--gold3)}
 .nav-links{display:flex; align-items:center; gap:1.6rem 1.4rem; list-style:none; flex:1 1 auto; min-width:0; flex-wrap:wrap; justify-content:flex-end}
 .nav-links a{font-size:.92rem; font-weight:500; color:var(--ink-dim); transition:.2s; position:relative}
 .nav-links a:hover{color:#fff}
@@ -140,8 +151,20 @@ section{position:relative; padding:88px 0}
 .btn-portal:hover{background:rgba(201,153,58,.12); transform:translateY(-2px)}
 
 /* ══════════════════ HERO ══════════════════ */
-#hero{padding-top:178px; overflow:hidden}
-.hero-bg-grid{position:absolute; inset:0; pointer-events:none; opacity:.5;
+#hero{padding-top:178px; overflow:hidden; position:relative}
+.hero-bg-img{position:absolute; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    linear-gradient(90deg, rgba(7,15,29,.88) 0%, rgba(7,15,29,.7) 42%, rgba(7,15,29,.18) 75%, rgba(7,15,29,.5) 100%),
+    linear-gradient(180deg, rgba(7,15,29,.5) 0%, transparent 18%, transparent 78%, #070f1d 100%),
+    url("assets/hero-architecture-bg.jpg");
+  background-size:cover; background-position:center right; opacity:1}
+@media(max-width:768px){
+  .hero-bg-img{background-image:
+    linear-gradient(180deg, rgba(7,15,29,.88) 0%, rgba(7,15,29,.72) 50%, rgba(7,15,29,.92) 100%),
+    url("assets/hero-architecture-bg.jpg");
+    opacity:.92}
+}
+.hero-bg-grid{position:absolute; inset:0; pointer-events:none; opacity:.18; z-index:1;
   background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
   background-size:48px 48px; -webkit-mask-image:radial-gradient(circle at 30% 30%, #000, transparent 70%); mask-image:radial-gradient(circle at 30% 30%, #000, transparent 70%)}
@@ -157,16 +180,20 @@ section{position:relative; padding:88px 0}
   backdrop-filter:blur(10px); box-shadow:0 12px 34px rgba(0,0,0,.3)}
 .badge-part{font-size:.72rem; font-weight:700; letter-spacing:.06em; color:var(--ink-dim)}
 .badge-part + .badge-part{margin-left:.5rem; padding-left:.7rem; border-left:1px solid var(--line); color:var(--gold3)}
-.hero-title{font-size:clamp(2.1rem,4.4vw,3.6rem); line-height:1.06; margin-bottom:1.2rem; font-weight:800; color:#fff}
+.hero-title{font-size:clamp(2.1rem,4.4vw,3.6rem); line-height:1.06; margin-bottom:1.2rem; font-weight:800; color:#fff;
+  text-shadow:0 4px 28px rgba(0,0,0,.85), 0 2px 6px rgba(0,0,0,.6)}
 .hero-title-line{display:block; white-space:nowrap}
 .hero-title em{font-style:normal; background:linear-gradient(92deg,#f2d391 0%, var(--gold) 45%, #f8e7bd 100%);
   -webkit-background-clip:text; background-clip:text; color:transparent}
-.hero-sub{font-size:clamp(1rem,1.5vw,1.14rem); color:#c7d3e4; max-width:560px; margin-bottom:2rem}
+.hero-sub{font-size:clamp(1rem,1.5vw,1.14rem); color:#e2ecf8; max-width:560px; margin-bottom:2rem;
+  text-shadow:0 2px 14px rgba(0,0,0,.85)}
 .hero-btns{display:flex; flex-wrap:wrap; gap:.9rem; align-items:center; margin-bottom:2.4rem}
 .hero-stats{display:flex; flex-wrap:wrap; gap:2rem}
 .stat{display:flex; flex-direction:column}
-.stat-num{font-family:var(--font-h); font-weight:800; font-size:1.7rem; color:var(--gold2)}
-.stat-label{font-size:.78rem; color:var(--ink-faint); letter-spacing:.05em; text-transform:uppercase}
+.stat-num{font-family:var(--font-h); font-weight:800; font-size:1.7rem; color:var(--gold2);
+  text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.stat-label{font-size:.78rem; color:#b0c2db; letter-spacing:.05em; text-transform:uppercase;
+  text-shadow:0 2px 8px rgba(0,0,0,.8)}
 
 /* card de contato do hero */
 .hero-card-wrap{position:relative; z-index:2; display:flex; justify-content:center; perspective:1400px}
@@ -208,6 +235,63 @@ section{position:relative; padding:88px 0}
 .why-num{font-family:var(--font-h); font-weight:800; font-size:1.5rem; color:var(--gold2); margin-bottom:.7rem}
 .why-title{font-size:1.2rem; color:#fff; margin-bottom:.6rem}
 .why-desc{color:var(--ink-dim); font-size:.96rem; line-height:1.6}
+
+/* ══════════════════ BRAND SHOWCASE (POMELLI STUDY) ══════════════════ */
+#showcase{position:relative; padding:90px 0; overflow:hidden}
+.showcase-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1.8rem; margin-top:2.6rem}
+.showcase-card{
+  background:linear-gradient(165deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+  border:1px solid rgba(201,153,58,.28); border-radius:24px; overflow:hidden;
+  backdrop-filter:blur(12px); box-shadow:0 30px 70px rgba(0,0,0,.4);
+  transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  display:flex; flex-direction:column}
+.showcase-card:hover{
+  transform:translateY(-6px); border-color:var(--gold2);
+  box-shadow:0 38px 80px rgba(0,0,0,.55), 0 0 30px rgba(201,153,58,.2)}
+.showcase-img-wrap{position:relative; width:100%; height:260px; overflow:hidden}
+.showcase-img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .5s cubic-bezier(.25,1,.5,1)}
+.showcase-card:hover .showcase-img{transform:scale(1.06)}
+.showcase-img-overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 40%, rgba(7,15,29,.95) 100%)}
+.showcase-tag-float{
+  position:absolute; top:1.1rem; left:1.1rem;
+  background:rgba(8,15,30,.82); border:1px solid rgba(201,153,58,.4);
+  color:var(--gold2); font-size:.72rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:.12em; padding:.4rem .85rem; border-radius:999px;
+  backdrop-filter:blur(8px)}
+.showcase-body{padding:1.8rem 1.8rem 2rem; display:flex; flex-direction:column; flex:1}
+.showcase-card-title{font-size:1.35rem; color:#fff; margin-bottom:.7rem; font-family:var(--font-h)}
+.showcase-card-desc{color:var(--ink-dim); font-size:.95rem; line-height:1.65; margin-bottom:1.4rem}
+.showcase-features{list-style:none; display:flex; flex-direction:column; gap:.6rem; margin-top:auto}
+.showcase-features li{
+  display:flex; align-items:center; gap:.65rem; font-size:.9rem; color:#d8e2f0}
+.showcase-features li svg{width:16px; height:16px; color:var(--gold2); flex-shrink:0}
+
+/* Citação Executiva de Nilo Estrella */
+.showcase-quote-box{
+  margin-top:2.6rem;
+  background:linear-gradient(160deg, rgba(20,36,63,.55), rgba(15,28,49,.35));
+  border:1px solid rgba(201,153,58,.32); border-radius:20px;
+  padding:2rem 2.2rem; display:flex; align-items:center; gap:1.8rem;
+  backdrop-filter:blur(10px); box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.showcase-quote-avatar{
+  width:84px; height:84px; border-radius:50%; object-fit:cover; flex-shrink:0;
+  border:2px solid var(--gold2); box-shadow:0 0 0 5px rgba(201,153,58,.18), 0 8px 24px rgba(0,0,0,.4)}
+.showcase-quote-text{flex:1}
+.showcase-quote-p{
+  font-family:var(--font-h); font-size:1.06rem; color:#fff; line-height:1.6;
+  font-weight:600; font-style:italic; margin-bottom:.6rem}
+.showcase-quote-author{
+  font-size:.84rem; color:var(--gold2); font-weight:700; text-transform:uppercase; letter-spacing:.06em}
+.showcase-quote-role{color:var(--ink-faint); font-weight:400; margin-left:.4rem; text-transform:none}
+
+@media(max-width:900px){
+  .showcase-grid{grid-template-columns:1fr}
+  .showcase-quote-box{flex-direction:column; text-align:center; padding:1.6rem}
+}
 
 /* ══════════════════ PROGRAMS ══════════════════ */
 .programs-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem}
@@ -255,6 +339,76 @@ section{position:relative; padding:88px 0}
 .form-select option:hover,
 .form-select option:focus{background-color:var(--navy4); color:var(--gold3)}
 .form-select option:checked{background-color:var(--navy4); color:var(--gold2)}
+
+/* ── Campo de telefone internacional integrado com seletor compacto ── */
+.phone-input-group{display:flex; align-items:stretch; width:100%; position:relative}
+.custom-country-picker{position:relative; flex:0 0 auto}
+.country-trigger{
+  display:inline-flex; align-items:center; justify-content:center; gap:.35rem;
+  height:100%; min-width:58px; max-width:74px; padding:.85rem .65rem;
+  background-color:rgba(255,255,255,.05); border:1px solid var(--line);
+  border-right:none; border-top-left-radius:12px; border-bottom-left-radius:12px;
+  border-top-right-radius:0; border-bottom-right-radius:0;
+  color:var(--ink); font-size:.95rem; font-weight:700;
+  cursor:pointer; outline:none; transition:border-color .2s, box-shadow .2s, background-color .2s;
+  user-select:none;
+}
+.country-trigger:hover{background-color:rgba(255,255,255,.08)}
+.country-trigger:focus,
+.country-trigger.is-open{border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,153,58,.16); z-index:4}
+.country-trigger-code{font-family:var(--font-h); color:var(--gold2); letter-spacing:.02em}
+.country-trigger-arrow{stroke:var(--ink-dim); flex-shrink:0; transition:transform .2s ease}
+.country-trigger.is-open .country-trigger-arrow{transform:rotate(180deg)}
+
+.country-dropdown-menu{
+  position:absolute; top:calc(100% + 6px); left:0; z-index:600;
+  width:295px; max-width:calc(100vw - 32px); max-height:280px; overflow-y:auto;
+  background:#091424; border:1px solid rgba(201,153,58,.38);
+  border-radius:14px; box-shadow:0 22px 55px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.06);
+  padding:.4rem; display:none; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+}
+.country-dropdown-menu.is-open{
+  display:block; animation:countryDropdownFade .18s cubic-bezier(.22,.9,.28,1);
+}
+@keyframes countryDropdownFade{
+  from{opacity:0; transform:translateY(-6px)}
+  to{opacity:1; transform:translateY(0)}
+}
+.country-option-item{
+  display:flex; align-items:center; gap:.6rem; width:100%;
+  padding:.55rem .65rem; border-radius:8px; border:none;
+  background:transparent; color:var(--ink); font-size:.88rem;
+  cursor:pointer; text-align:left; transition:background-color .15s ease, color .15s ease;
+}
+.country-option-item:hover,
+.country-option-item:focus{background:rgba(201,153,58,.15); outline:none}
+.country-option-item.is-selected{background:rgba(201,153,58,.24); color:#fff}
+.country-flag-wrap{
+  display:inline-flex; align-items:center; justify-content:center;
+  flex:0 0 20px; width:20px; height:14px; border-radius:2.5px; overflow:hidden;
+  box-shadow:0 0 0 1px rgba(255,255,255,.18);
+}
+.country-flag-wrap svg{display:block; width:20px; height:14px}
+.country-code-tag{
+  font-family:var(--font-h); font-weight:700; font-size:.76rem;
+  letter-spacing:.05em; padding:.15rem .35rem; border-radius:4px;
+  background:rgba(255,255,255,.07); color:var(--gold2); flex:0 0 auto;
+}
+.country-name{
+  flex:1 1 auto; font-size:.86rem; color:var(--ink);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.country-dial{
+  flex:0 0 auto; font-size:.82rem; font-weight:600; color:var(--ink-dim); margin-left:auto;
+}
+
+.phone-input-group .phone-number-input{
+  flex:1 1 auto; min-width:0;
+  border-top-left-radius:0; border-bottom-left-radius:0;
+  border-left:1px solid rgba(255,255,255,.1);
+}
+.phone-input-group .phone-number-input:focus{z-index:2}
+.phone-input-group .phone-number-input.invalid{border-color:#e5484d; box-shadow:0 0 0 3px rgba(229,72,77,.18); z-index:2}
 .range-row{display:flex; align-items:center; gap:1rem}
 input[type=range]{-webkit-appearance:none; appearance:none; height:6px; border-radius:99px; flex:1;
   background:linear-gradient(90deg,var(--gold) var(--p,40%), rgba(255,255,255,.12) var(--p,40%)); outline:none}
@@ -993,6 +1147,16 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
   font-weight:400;
   line-height:1;
 }
+#programs{scroll-margin-top:90px}
+@keyframes programTargetPulse{
+  0%{box-shadow:0 0 0 0 rgba(231,185,92,.75), 0 34px 86px rgba(0,0,0,.58)}
+  40%{box-shadow:0 0 42px 10px rgba(231,185,92,.65), 0 34px 86px rgba(0,0,0,.58)}
+  100%{box-shadow:0 0 0 0 rgba(231,185,92,0), 0 34px 86px rgba(0,0,0,.58)}
+}
+#programs .program-ring-item.program-card-targeted .program-face{
+  animation:programTargetPulse 2s ease-out;
+  border-color:rgba(231,185,92,.95) !important;
+}
 #programs .program-ring-item.is-active .program-face-front{
   border-color:rgba(231,185,92,.64);
   box-shadow:0 34px 86px rgba(0,0,0,.58), 0 0 0 1px rgba(201,153,58,.32), 0 0 56px rgba(201,153,58,.17), inset 0 1px 0 rgba(255,255,255,.18);
@@ -1180,8 +1344,11 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
 <!-- NAV -->
 <nav id="navbar">
   <a class="logo" href="#">
-    <img class="logo-img" src="assets/acrisure-logo-white.png" alt="Acrisure Mortgage">
-    <span class="logo-text">Acrisure Mortgage<span class="logo-sub">Team Estrella</span></span>
+    <img class="logo-img" src="assets/acrisure-logo-white.png" alt="Team Estrella | Acrisure Mortgage">
+    <span class="logo-text">
+      <span class="logo-main"><span class="logo-word-white">Team</span> <span class="logo-word-gold">Estrella</span></span>
+      <span class="logo-sub">Acrisure Mortgage</span>
+    </span>
   </a>
   <ul class="nav-links">
     <li><a href="#programs">Programs</a></li>
@@ -1224,12 +1391,13 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
       </ul>
     </div>
 
-    <a class="nav-cta" href="#application">Start Application</a>
+    <a class="nav-cta" href="https://niloestrella.com.br/analise-gratuita" target="_blank" rel="noopener">Free Analysis</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-bg-img" aria-hidden="true"></div>
   <div class="hero-bg-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
@@ -1260,7 +1428,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
         </div>
         <a class="hrc-row" href="tel:+19495197902"><span class="hrc-prog">Phone</span><span class="hrc-rate hrc-val">+1 (949) 519-7902</span></a>
         <a class="hrc-row" href="https://wa.me/19495197902" target="_blank" rel="noopener" data-lang-link="waContact"><span class="hrc-prog">WhatsApp</span><span class="hrc-rate hrc-val">Chat now</span></a>
-        <a class="hrc-row" href="mailto:contato@niloestrella.com.br" data-lang-link="mailContact"><span class="hrc-prog">Email</span><span class="hrc-rate hrc-val" style="font-size:.78rem"><span class="__cf_email__" data-cfemail="721c17010600171e1e13321311001b010700171f1d0006151315175c111d1f">contato@niloestrella.com.br</span></span></a>
+        <a class="hrc-row" href="mailto:contato@niloestrella.com.br" data-lang-link="mailContact"><span class="hrc-prog">Email</span><span class="hrc-rate hrc-val" style="font-size:.78rem"><span class="__cf_email__" data-cfemail="1e7d71706a7f6a715e707772717b6d6a6c7b72727f307d7173307c6c">contato@niloestrella.com.br</span></span></a>
         <div class="hrc-row"><span class="hrc-prog">Office</span><span class="hrc-rate hrc-val">Winter Garden, FL</span></div>
         <div class="hrc-updated">132 W Plant St, Suite 210 · Winter Garden, FL 34787</div>
         <div class="hrc-actions">
@@ -1286,7 +1454,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
   <div class="section-inner">
     <div class="section-header centered fade-up">
       <span class="section-tag" style="color:var(--gold-light)">Why Choose Us</span>
-      <h2 class="section-title" style="color:var(--white)">The Premier Difference</h2>
+      <h2 class="section-title" style="color:var(--white)">The Difference</h2>
       <p class="section-sub" style="color:rgba(255,255,255,.5)">We're not a call center. We're your dedicated local mortgage partner from start to finish.</p>
     </div>
     <div class="why-grid why-carousel-shell fade-up">
@@ -1329,7 +1497,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
             </span>
             <span class="why-face why-face-back" aria-hidden="true">
               <span class="why-num">03</span>
-              <span class="why-desc">No surprises at closing. Every fee, every cost — broken down clearly before you ever sign.</span>
+              <span class="why-desc">No surprises at closing. Every fee, every cost, broken down clearly before you ever sign.</span>
               <span class="why-card-hint">Click to return</span>
             </span>
           </span>
@@ -1343,7 +1511,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
             </span>
             <span class="why-face why-face-back" aria-hidden="true">
               <span class="why-num">04</span>
-              <span class="why-desc">Team Estrella is powered by Acrisure Mortgage — a Top 10 national lender with in-house processing, underwriting and closing.</span>
+              <span class="why-desc">Team Estrella is powered by Acrisure Mortgage, a Top 10 national lender with in-house processing, underwriting and closing.</span>
               <span class="why-card-hint">Click to return</span>
             </span>
           </span>
@@ -1357,7 +1525,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
             </span>
             <span class="why-face why-face-back" aria-hidden="true">
               <span class="why-num">05</span>
-              <span class="why-desc">One loan officer, one phone number, always available — not a rotating team of strangers.</span>
+              <span class="why-desc">One loan officer, one phone number, always available, not a rotating team of strangers.</span>
               <span class="why-card-hint">Click to return</span>
             </span>
           </span>
@@ -1399,6 +1567,64 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
   </div>
 </section>
 
+<!-- BRAND SHOWCASE (POMELLI STUDY) -->
+<section id="showcase">
+  <div class="section-inner">
+    <div class="section-header centered fade-up">
+      <span class="section-tag">Strategic Advisory</span>
+      <h2 class="section-title">Where Technical Precision Meets Concierge Service</h2>
+      <p class="section-sub">Combining Acrisure Mortgage's national strength with dedicated personal mortgage guidance in Central Florida.</p>
+    </div>
+
+    <div class="showcase-grid fade-up">
+      <!-- Card 1: Fintech Precision -->
+      <div class="showcase-card">
+        <div class="showcase-img-wrap">
+          <img class="showcase-img" src="assets/pomelli-fintech-precision.jpg" alt="Technical Precision & Analysis" loading="lazy">
+          <div class="showcase-img-overlay"></div>
+          <span class="showcase-tag-float">Fintech Precision</span>
+        </div>
+        <div class="showcase-body">
+          <h3 class="showcase-card-title">Technical Precision & Analysis</h3>
+          <p class="showcase-card-desc">Meticulous loan structuring, comparative simulations, and agile underwriting to secure the most competitive mortgage terms in the US market.</p>
+          <ul class="showcase-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>24-Hour Pre-Approval Feasibility</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Programs for W-2, 1099, Bank Statement & DSCR</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>In-House Processing & Underwriting</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2: Digital Concierge -->
+      <div class="showcase-card">
+        <div class="showcase-img-wrap">
+          <img class="showcase-img" src="assets/pomelli-gold-key.jpg" alt="Digital Concierge Experience" loading="lazy">
+          <div class="showcase-img-overlay"></div>
+          <span class="showcase-tag-float">Digital Concierge</span>
+        </div>
+        <div class="showcase-body">
+          <h3 class="showcase-card-title">Digital Concierge Experience</h3>
+          <p class="showcase-card-desc">Complete peace of mind from initial consultation to keys in hand for your Florida home, with personal guidance in your preferred language.</p>
+          <ul class="showcase-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Trilingual Support (PT · EN · ES)</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Central Florida Market Specialist</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Direct Line with Nilo Estrella</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Citação de Compromisso Nilo Estrella -->
+    <div class="showcase-quote-box fade-up">
+      <img class="showcase-quote-avatar" src="assets/nilo-avatar.jpg" alt="Nilo Estrella">
+      <div class="showcase-quote-text">
+        <p class="showcase-quote-p">"We guide you through every step of mortgage financing in the United States, turning your property acquisition into a smooth, transparent, and secure journey."</p>
+        <div class="showcase-quote-author">Nilo Estrella<span class="showcase-quote-role">· Team Estrella Leader · NMLS #2802165</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROGRAMS -->
 <section id="programs">
   <div class="section-inner">
@@ -1410,7 +1636,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
     <div class="programs-grid program-carousel-shell fade-up">
       <div class="program-carousel-stage" id="programCarouselStage">
         <div class="program-carousel-ring" id="programCarouselRing">
-        <article class="prog-card program-ring-item" data-program-index="0">
+        <article class="prog-card program-ring-item" id="prog-card-0" data-program-index="0" data-programs="conventional fha first-time">
           <div class="program-flip" role="button" tabindex="0" aria-label="First-Time Home Buyer" aria-pressed="false">
             <div class="program-face program-face-front">
               <span class="program-card-index">01</span>
@@ -1439,7 +1665,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
           </div>
           <a class="prog-cta prog-card-cta" href="#application">Start Application</a>
         </article>
-        <article class="prog-card program-ring-item" data-program-index="1">
+        <article class="prog-card program-ring-item" id="prog-card-1" data-program-index="1" data-programs="va refinance">
           <div class="program-flip" role="button" tabindex="0" aria-label="Refinance" aria-pressed="false">
             <div class="program-face program-face-front">
               <span class="program-card-index">02</span>
@@ -1469,7 +1695,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
           </div>
           <a class="prog-cta prog-card-cta" href="#application">Start Application</a>
         </article>
-        <article class="prog-card program-ring-item" data-program-index="2">
+        <article class="prog-card program-ring-item" id="prog-card-2" data-program-index="2" data-programs="new-construction construction">
           <div class="program-flip" role="button" tabindex="0" aria-label="New Construction" aria-pressed="false">
             <div class="program-face program-face-front">
               <span class="program-card-index">03</span>
@@ -1497,7 +1723,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
           </div>
           <a class="prog-cta prog-card-cta" href="#application">Start Application</a>
         </article>
-        <article class="prog-card program-ring-item" data-program-index="3">
+        <article class="prog-card program-ring-item" id="prog-card-3" data-program-index="3" data-programs="dscr investment">
           <div class="program-flip" role="button" tabindex="0" aria-label="Investment Property" aria-pressed="false">
             <div class="program-face program-face-front">
               <span class="program-card-index">04</span>
@@ -1526,7 +1752,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
           </div>
           <a class="prog-cta prog-card-cta" href="#application">Start Application</a>
         </article>
-        <article class="prog-card program-ring-item" data-program-index="4">
+        <article class="prog-card program-ring-item" id="prog-card-4" data-program-index="4" data-programs="jumbo">
           <div class="program-flip" role="button" tabindex="0" aria-label="Jumbo Loans" aria-pressed="false">
             <div class="program-face program-face-front">
               <span class="program-card-index">05</span>
@@ -1554,7 +1780,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
           </div>
           <a class="prog-cta prog-card-cta" href="#application">Start Application</a>
         </article>
-        <article class="prog-card program-ring-item" data-program-index="5">
+        <article class="prog-card program-ring-item" id="prog-card-5" data-program-index="5" data-programs="bank-statement bank">
           <div class="program-flip" role="button" tabindex="0" aria-label="Bank Statement Loans" aria-pressed="false">
             <div class="program-face program-face-front">
               <span class="program-card-index">06</span>
@@ -1709,7 +1935,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
         </div>
         <div class="calc-disclaimer">For estimation purposes only, enter an estimated rate. Actual rates depend on your qualification; contact us for a personalized quote. Does not include HOA fees, flood insurance, or other costs.</div>
         <div class="calc-apply-btn">
-          <a class="btn-primary" href="#application" style="justify-content:center;width:100%;">Get Pre-Approved Now</a>
+          <a class="btn-primary" href="#application" style="justify-content:center;width:100%;">Start Application</a>
         </div>
       </div>
     </div>
@@ -1766,7 +1992,17 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
             </div>
             <div class="form-group">
               <label class="form-label">Phone Number *</label>
-              <input type="tel" class="form-input" id="a-phone" data-required="1" data-type="phone" placeholder="(352) 555-0100" oninput="validateStep(1)">
+              <div class="phone-input-group">
+                <div class="custom-country-picker" data-picker-for="a-phone" id="a-picker-wrap">
+                  <button type="button" class="country-trigger" id="a-country-btn" aria-haspopup="listbox" aria-expanded="false" title="Country code">
+                    <span class="country-trigger-code" id="a-trigger-code">+1</span>
+                    <svg class="country-trigger-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1 5 5 9 1"/></svg>
+                  </button>
+                  <div class="country-dropdown-menu" id="a-country-menu" role="listbox" tabindex="-1"></div>
+                </div>
+                <input type="hidden" id="a-phone-country" name="phone_country" value="+1">
+                <input type="tel" class="form-input phone-number-input" id="a-phone" data-required="1" data-type="phone" placeholder="(352) 555-0100" autocomplete="tel">
+              </div>
             </div>
             <div class="form-group form-full">
               <label class="form-label" for="a-marital">Marital Status</label>
@@ -1994,7 +2230,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
             <h3>Application Submitted!</h3>
             <p>Thank you! We've received your application and one of our loan officers will contact you within 1 business hour to discuss your options and next steps.</p>
             <div style="background:var(--section-alt);border-radius:12px;padding:1.2rem;margin-bottom:1.5rem;">
-              <p style="font-size:.85rem;color:var(--text-mid);margin:0;line-height:1.6;">📞 <strong>Questions in the meantime?</strong> Call us at <strong>(949) 519-7902</strong> or email <strong><a href="mailto:contato@niloestrella.com.br" class="__cf_email__" data-cfemail="d8b6bdabacaabdb4b4b998b9bbaab1abadaabdb5b7aaacbfb9bfbdf6bbb7b5">contato@niloestrella.com.br</a></strong></p>
+              <p style="font-size:.85rem;color:var(--text-mid);margin:0;line-height:1.6;">📞 <strong>Questions in the meantime?</strong> Call us at <strong>(949) 519-7902</strong> or email <strong><a href="/cdn-cgi/l/email-protection#177478796376637857797e7b7872646365727b7b763974787a397565"><span class="__cf_email__" data-cfemail="a8cbc7c6dcc9dcc7e8c6c1c4c7cddbdcdacdc4c4c986cbc7c586cada">[email&#160;protected]</span></a></strong></p>
             </div>
             <a class="btn-primary" href="#programs" style="display:inline-flex;">Explore Our Programs</a>
           </div>
@@ -2079,7 +2315,7 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
             <div class="ci-icon ci-gmail-icon"><img src="assets/gmail-icon.png" alt="" aria-hidden="true"></div>
             <div>
               <div class="ci-label">Email</div>
-              <div class="ci-val"><span class="__cf_email__" data-cfemail="0d63687e797f6861616c4d6c6e7f647e787f6860627f796a6c6a68236e6260"><span class="__cf_email__" data-cfemail="b4d7dbdac0d5c0dbf4daddd8dbd1c7c0c6d1d8d8d59ad7dbd99ad6c6">contato@niloestrella.com.br</span></span></div>
+              <div class="ci-val">contato@niloestrella.com.br</div>
             </div>
           </a>
 
@@ -2104,13 +2340,29 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
       </div>
 
       <!-- FORMULÁRIO (Mantenha como está ou ajuste o ID/Action se for usar Formspree aqui também) -->
-      <form id="contact-form" class="contact-form-card fade-up" action="SUA_URL_DO_FORMSPREE" method="POST">
+      <form id="contact-form" class="contact-form-card fade-up" action="https://formspree.io/f/mbdbrrlp" method="POST">
         <h3>Send Us a Message</h3>
         <div class="form-grid-2" style="margin-bottom:1.2rem;">
-          <div class="form-group"><label class="form-label">Name</label><input type="text" name="Name" class="form-input" id="c-name" placeholder="Your Name" required></div>
-          <div class="form-group"><label class="form-label">Phone</label><input type="tel" name="Phone" class="form-input" id="c-phone" placeholder="(352) 555-0000"></div>
+          <div class="form-group"><label class="form-label">First Name</label><input type="text" name="First Name" class="form-input" id="c-fname" placeholder="First Name" required></div>
+          <div class="form-group"><label class="form-label">Last Name</label><input type="text" name="Last Name" class="form-input" id="c-lname" placeholder="Last Name"></div>
         </div>
-        <div class="form-group"><label class="form-label">Email</label><input type="email" name="Email" class="form-input" id="c-cemail" placeholder="you@email.com" required></div>
+        <div class="form-grid-2" style="margin-bottom:1.2rem;">
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <div class="phone-input-group">
+              <div class="custom-country-picker" data-picker-for="c-phone" id="c-picker-wrap">
+                <button type="button" class="country-trigger" id="c-country-btn" aria-haspopup="listbox" aria-expanded="false" title="Country code">
+                  <span class="country-trigger-code" id="c-trigger-code">+1</span>
+                  <svg class="country-trigger-arrow" viewBox="0 0 10 6" width="10" height="6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1 5 5 9 1"/></svg>
+                </button>
+                <div class="country-dropdown-menu" id="c-country-menu" role="listbox" tabindex="-1"></div>
+              </div>
+              <input type="hidden" id="c-phone-country" name="Phone_Country" value="+1">
+              <input type="tel" name="Phone" class="form-input phone-number-input" id="c-phone" placeholder="(352) 555-0000" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group"><label class="form-label">Email</label><input type="email" name="Email" class="form-input" id="c-cemail" placeholder="you@email.com" required></div>
+        </div>
         <div class="form-group" style="margin-top:1.2rem;"><label class="form-label" for="c-topic">What can we help with?</label>
           <select class="form-select" name="Topic" id="c-topic">
             <option value="Purchase Financing">Purchase Financing</option>
@@ -2133,10 +2385,13 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
     <div class="footer-top">
       <div class="footer-brand">
         <a class="logo" href="#">
-          <img class="logo-img" src="assets/acrisure-logo-white.png" alt="Acrisure Mortgage" style="height:44px">
-          <span class="logo-text" style="font-size:1rem">Acrisure Mortgage<span class="logo-sub">Team Estrella</span></span>
+          <img class="logo-img" src="assets/acrisure-logo-white.png" alt="Team Estrella | Acrisure Mortgage" style="height:44px">
+          <span class="logo-text" style="font-size:1.05rem">
+            <span class="logo-main"><span class="logo-word-white">Team</span> <span class="logo-word-gold">Estrella</span></span>
+            <span class="logo-sub">Acrisure Mortgage</span>
+          </span>
         </a>
-        <p>Team Estrella — mortgage experts serving Central Florida in Portuguese, English and Spanish. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licensed in FL.</p>
+        <p>Team Estrella, mortgage experts serving Central Florida in Portuguese, English and Spanish. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licensed in FL.</p>
         <div class="footer-social">
           <a class="soc-btn" href="https://www.facebook.com/nilo.gomes.127" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -2158,13 +2413,13 @@ html.i18n-loading::after{content:""; position:fixed; inset:0; background:var(--n
       <div class="footer-col">
         <h4>Loan Programs</h4>
         <ul>
-          <li><a href="#programs">Conventional Loans</a></li>
-          <li><a href="#programs">FHA Loans</a></li>
-          <li><a href="#programs">VA Loans</a></li>
-          <li><a href="#programs">Jumbo Loans</a></li>
-          <li><a href="#programs">Bank Statement</a></li>
-          <li><a href="#programs">New Construction</a></li>
-          <li><a href="#programs">DSCR Loans</a></li>
+          <li><a href="#prog-conventional" data-program-target="0">Conventional Loans</a></li>
+          <li><a href="#prog-fha" data-program-target="0">FHA Loans</a></li>
+          <li><a href="#prog-va" data-program-target="1">VA Loans</a></li>
+          <li><a href="#prog-jumbo" data-program-target="4">Jumbo Loans</a></li>
+          <li><a href="#prog-bank-statement" data-program-target="5">Bank Statement</a></li>
+          <li><a href="#prog-new-construction" data-program-target="2">New Construction</a></li>
+          <li><a href="#prog-dscr" data-program-target="3">DSCR Loans</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -2246,7 +2501,7 @@ const I18N_DICT = {
   "Previous card": "Cartão anterior",
   "Next card": "Próximo cartão",
   "Backed by Acrisure Mortgage": "Respaldo da Acrisure Mortgage",
-  "Team Estrella is powered by Acrisure Mortgage — a Top 10 national lender with in-house processing, underwriting and closing.": "A Team Estrella tem o respaldo da Acrisure Mortgage — um dos 10 maiores credores dos EUA, com processamento, underwriting e fechamento internos.",
+  "Team Estrella is powered by Acrisure Mortgage, a Top 10 national lender with in-house processing, underwriting and closing.": "A Team Estrella tem o respaldo da Acrisure Mortgage, um dos 10 maiores credores dos EUA, com processamento, underwriting e fechamento internos.",
   "(estimate)": "(estimada)",
   "30 years": "30 anos",
   "15 years": "15 anos",
@@ -2261,13 +2516,14 @@ const I18N_DICT = {
   "Calculator": "Calculadora",
   "Apply": "Solicitar",
   "Contact": "Contato",
-  "Start Application": "Iniciar solicitação",
+  "Free Analysis": "Análise Gratuita",
+  "Start Application": "Iniciar aplicação",
   "NMLS Licensed · Florida": "Licença NMLS · Flórida",
   "Your Home.": "Sua casa.",
   "Your Dream.": "Seu sonho.",
   "Your Rate.": "Sua taxa.",
-  "Expert mortgage guidance from a local loan originator who puts your needs first. Competitive rates, fast closings, and a seamless experience from application to keys.": "Orientação especializada em financiamento imobiliário com um consultor local que coloca as suas necessidades em primeiro lugar. Taxas competitivas, fechamentos rápidos e uma experiência sem complicação, da solicitação até as chaves.",
-  "Apply Now": "Solicitar agora",
+  "Expert mortgage guidance from a local loan originator who puts your needs first. Competitive rates, fast closings, and a seamless experience from application to keys.": "Orientação especializada em financiamento imobiliário com um consultor local que coloca as suas necessidades em primeiro lugar. Taxas competitivas, fechamentos rápidos e uma experiência sem complicação, da aplicação até as chaves.",
+  "Apply Now": "Aplique agora",
   "View Today's Rates": "Ver as taxas de hoje",
   "Loans Funded": "Em empréstimos liberados",
   "Families Served": "Famílias atendidas",
@@ -2312,11 +2568,11 @@ const I18N_DICT = {
   "Speed You Can Count On": "Agilidade com que você pode contar",
   "Average close time of 21 days. Pre-approvals in 24 hours. We move as fast as you need.": "Tempo médio de fechamento de 21 dias. Pré-aprovações em 24 horas. Avançamos no ritmo que você precisa.",
   "Transparent Pricing": "Preços transparentes",
-  "No surprises at closing. Every fee, every cost — broken down clearly before you ever sign.": "Sem surpresas no fechamento. Cada taxa, cada custo — tudo detalhado com clareza antes de você assinar.",
+  "No surprises at closing. Every fee, every cost, broken down clearly before you ever sign.": "Sem surpresas no fechamento. Cada taxa, cada custo, tudo detalhado com clareza antes de você assinar.",
   "Access to 50+ Lenders": "Acesso a mais de 50 credores",
   "We shop your file across our entire network to find you the best rate and terms available.": "Analisamos o seu perfil em toda a nossa rede para encontrar a melhor taxa e as melhores condições disponíveis.",
   "Personal Guidance": "Orientação personalizada",
-  "One loan officer, one phone number, always available — not a rotating team of strangers.": "Um consultor, um telefone, sempre disponível — nada de equipe rotativa de desconhecidos.",
+  "One loan officer, one phone number, always available, not a rotating team of strangers.": "Um consultor, um telefone, sempre disponível, nada de equipe rotativa de desconhecidos.",
   "Digital + Human": "Digital + humano",
   "Apply online in minutes. Then get real human support every step of the way to closing.": "Solicite online em minutos. Depois, conte com apoio humano de verdade em cada etapa até o fechamento.",
   "Loan Programs": "Programas de financiamento",
@@ -2389,8 +2645,8 @@ const I18N_DICT = {
   "Estimates only. Does not include HOA fees, flood insurance, or other costs. Contact us for an accurate Loan Estimate.": "Apenas estimativas. Não inclui taxas de HOA, seguro contra enchentes ou outros custos. Fale conosco para um Loan Estimate preciso.",
   "Get Pre-Approved Now": "Obter pré-aprovação agora",
   "Get Started": "Comece agora",
-  "Begin Your Application": "Inicie a sua solicitação",
-  "Complete this short initial application and we'll reach out within 1 business hour to discuss your options.": "Preencha esta breve solicitação inicial e retornaremos em até 1 hora útil para discutir as suas opções.",
+  "Begin Your Application": "Inicie a sua aplicação",
+  "Complete this short initial application and we'll reach out within 1 business hour to discuss your options.": "Preencha esta breve aplicação inicial e retornaremos em até 1 hora útil para discutir as suas opções.",
   "Personal": "Pessoal",
   "Property": "Imóvel",
   "Financial": "Financeiro",
@@ -2398,8 +2654,10 @@ const I18N_DICT = {
   "Personal Information": "Informações pessoais",
   "Tell us a little about yourself so we can get started.": "Conte um pouco sobre você para começarmos.",
   "First Name *": "Nome *",
+  "First Name": "Nome",
   "Jane": "Maria",
   "Last Name *": "Sobrenome *",
+  "Last Name": "Sobrenome",
   "Smith": "Silva",
   "Email Address *": "E-mail *",
   "Phone Number *": "Telefone *",
@@ -2466,7 +2724,7 @@ const I18N_DICT = {
   "Additional Comments / Questions": "Comentários ou dúvidas adicionais",
   "Anything else you'd like us to know? Questions you have? We're here to help…": "Mais alguma coisa que gostaria de nos contar? Tem dúvidas? Estamos aqui para ajudar…",
   "Step 3 of 4": "Etapa 3 de 4",
-  "Review Application": "Revisar solicitação",
+  "Review Application": "Revisar aplicação",
   "Review & Submit": "Revisar e enviar",
   "Please review your information before submitting.": "Confira as suas informações antes de enviar.",
   "Full Name": "Nome completo",
@@ -2483,15 +2741,15 @@ const I18N_DICT = {
   "Annual Income": "Renda anual",
   "Credit Score": "Score de crédito",
   "Preferred Program": "Programa preferido",
-  "I authorize Acrisure Mortgage to contact me regarding my mortgage inquiry. I understand this is not a complete loan application and does not constitute a commitment to lend. I agree to the": "Autorizo a Acrisure Mortgage a entrar em contato comigo sobre a minha consulta de financiamento. Entendo que esta não é uma solicitação completa de empréstimo e que não constitui compromisso de crédito. Aceito a",
+  "I authorize Acrisure Mortgage to contact me regarding my mortgage inquiry. I understand this is not a complete loan application and does not constitute a commitment to lend. I agree to the": "Autorizo a Acrisure Mortgage a entrar em contato comigo sobre a minha consulta de financiamento. Entendo que esta não é uma aplicação completa de empréstimo e que não constitui compromisso de crédito. Aceito a",
   "Privacy Policy": "Política de Privacidade",
   "and": "e os",
   "Terms of Service": "Termos de Serviço",
   "I authorize Acrisure Mortgage to pull a soft credit inquiry for pre-qualification purposes. This will not affect my credit score.": "Autorizo a Acrisure Mortgage a realizar uma consulta de crédito soft para fins de pré-qualificação. Isso não afetará o meu score de crédito.",
   "Step 4 of 4": "Etapa 4 de 4",
-  "Submit Application ✓": "Enviar solicitação ✓",
-  "Application Submitted!": "Solicitação enviada!",
-  "Thank you! We've received your application and one of our loan officers will contact you within 1 business hour to discuss your options and next steps.": "Obrigado! Recebemos a sua solicitação e um dos nossos consultores entrará em contato em até 1 hora útil para discutir as suas opções e os próximos passos.",
+  "Submit Application ✓": "Enviar aplicação ✓",
+  "Application Submitted!": "Aplicação enviada!",
+  "Thank you! We've received your application and one of our loan officers will contact you within 1 business hour to discuss your options and next steps.": "Obrigado! Recebemos a sua aplicação e um dos nossos consultores entrará em contato em até 1 hora útil para discutir as suas opções e os próximos passos.",
   "Questions in the meantime?": "Ficou com dúvida enquanto isso?",
   "Call us at": "Ligue para",
   "or email": "ou envie e-mail para",
@@ -2521,7 +2779,7 @@ const I18N_DICT = {
   "Message": "Mensagem",
   "Tell us more about what you need…": "Conte mais sobre o que você precisa…",
   "Send Message": "Enviar mensagem",
-  "Team Estrella — mortgage experts serving Central Florida in Portuguese, English and Spanish. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licensed in FL.": "Team Estrella — especialistas em financiamento imobiliário no Centro da Flórida, atendendo em português, inglês e espanhol. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licenciado na Flórida.",
+  "Team Estrella, mortgage experts serving Central Florida in Portuguese, English and Spanish. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licensed in FL.": "Team Estrella, especialistas em financiamento imobiliário no Centro da Flórida, atendendo em português, inglês e espanhol. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licenciado na Flórida.",
   "Conventional Loans": "Empréstimos convencionais",
   "FHA Loans": "Empréstimos FHA",
   "VA Loans": "Empréstimos VA",
@@ -2574,7 +2832,24 @@ const I18N_DICT = {
   "Language": "Idioma",
   "Conventional 30-Year": "Convencional 30 anos",
   "Conventional 15-Year": "Convencional 15 anos",
-  "Jumbo 30-Year": "Jumbo 30 anos"
+  "Jumbo 30-Year": "Jumbo 30 anos",
+  "Strategic Advisory": "Assessoria Estratégica",
+  "Where Technical Precision Meets Concierge Service": "Onde a Precisão Técnica Encontra o Atendimento Exclusivo",
+  "Combining Acrisure Mortgage's national strength with dedicated personal mortgage guidance in Central Florida.": "Unindo a solidez nacional da Acrisure Mortgage à dedicação de uma consultoria personalizada na Flórida Central.",
+  "Fintech Precision": "Precisão Fintech",
+  "Technical Precision & Analysis": "Precisão e Análise Detalhada",
+  "Meticulous loan structuring, comparative simulations, and agile underwriting to secure the most competitive mortgage terms in the US market.": "Estruturação minuciosa de cada dossiê de crédito, simulações comparativas e agilidade no underwriting para garantir as melhores condições de financiamento.",
+  "24-Hour Pre-Approval Feasibility": "Análise de Viabilidade em 24h",
+  "Programs for W-2, 1099, Bank Statement & DSCR": "Soluções para W-2, 1099, Extrato Bancário e DSCR",
+  "In-House Processing & Underwriting": "Processamento e Underwriting Internos",
+  "Digital Concierge": "Concierge Digital",
+  "Digital Concierge Experience": "Atendimento Concierge Digital",
+  "Complete peace of mind from initial consultation to keys in hand for your Florida home, with personal guidance in your preferred language.": "Tranquilidade e segurança da primeira consulta até a entrega das chaves da sua casa na Flórida, com orientação próxima no seu idioma.",
+  "Trilingual Support (PT · EN · ES)": "Atendimento Trilíngue (Português · Inglês · Espanhol)",
+  "Central Florida Market Specialist": "Especialista no Mercado da Flórida Central",
+  "Direct Line with Nilo Estrella": "Contato Direto com Nilo Estrella",
+  "\"We guide you through every step of mortgage financing in the United States, turning your property acquisition into a smooth, transparent, and secure journey.\"": "\"Guiamos você em cada etapa do crédito imobiliário nos Estados Unidos, transformando a aquisição da sua propriedade em um processo ágil, transparente e seguro.\"",
+  "· Team Estrella Leader · NMLS #2802165": "· Líder da Team Estrella · NMLS #2802165"
   },
   es: {
   "Mortgage Loan Originator · NMLS #2802165": "Originador de Préstamos Hipotecarios · NMLS #2802165",
@@ -2595,7 +2870,7 @@ const I18N_DICT = {
   "Previous card": "Tarjeta anterior",
   "Next card": "Siguiente tarjeta",
   "Backed by Acrisure Mortgage": "Respaldo de Acrisure Mortgage",
-  "Team Estrella is powered by Acrisure Mortgage — a Top 10 national lender with in-house processing, underwriting and closing.": "Team Estrella cuenta con el respaldo de Acrisure Mortgage, uno de los 10 prestamistas más grandes de EE. UU., con procesamiento, underwriting y cierre internos.",
+  "Team Estrella is powered by Acrisure Mortgage, a Top 10 national lender with in-house processing, underwriting and closing.": "Team Estrella cuenta con el respaldo de Acrisure Mortgage, uno de los 10 prestamistas más grandes de EE. UU., con procesamiento, underwriting y cierre internos.",
   "(estimate)": "(estimada)",
   "30 years": "30 años",
   "15 years": "15 años",
@@ -2610,13 +2885,14 @@ const I18N_DICT = {
   "Calculator": "Calculadora",
   "Apply": "Solicitar",
   "Contact": "Contacto",
+  "Free Analysis": "Análisis Gratuito",
   "Start Application": "Iniciar solicitud",
   "NMLS Licensed · Florida": "Licencia NMLS · Florida",
   "Your Home.": "Tu casa.",
   "Your Dream.": "Tu sueño.",
   "Your Rate.": "Tu tasa.",
   "Expert mortgage guidance from a local loan originator who puts your needs first. Competitive rates, fast closings, and a seamless experience from application to keys.": "Asesoría experta en hipotecas de un oficial de préstamos local que pone tus necesidades primero. Tasas competitivas, cierres rápidos y una experiencia sin complicaciones, desde la solicitud hasta las llaves.",
-  "Apply Now": "Solicitar ahora",
+  "Apply Now": "Solicita ahora",
   "View Today's Rates": "Ver las tasas de hoy",
   "Loans Funded": "En préstamos otorgados",
   "Families Served": "Familias atendidas",
@@ -2661,11 +2937,11 @@ const I18N_DICT = {
   "Speed You Can Count On": "Rapidez en la que puedes confiar",
   "Average close time of 21 days. Pre-approvals in 24 hours. We move as fast as you need.": "Tiempo promedio de cierre de 21 días. Preaprobaciones en 24 horas. Avanzamos tan rápido como lo necesites.",
   "Transparent Pricing": "Precios transparentes",
-  "No surprises at closing. Every fee, every cost — broken down clearly before you ever sign.": "Sin sorpresas en el cierre. Cada cargo, cada costo, explicado con claridad antes de que firmes.",
+  "No surprises at closing. Every fee, every cost, broken down clearly before you ever sign.": "Sin sorpresas en el cierre. Cada cargo, cada costo, explicado con claridad antes de que firmes.",
   "Access to 50+ Lenders": "Acceso a más de 50 prestamistas",
   "We shop your file across our entire network to find you the best rate and terms available.": "Buscamos en toda nuestra red la mejor tasa y las mejores condiciones disponibles para tu caso.",
   "Personal Guidance": "Asesoría personalizada",
-  "One loan officer, one phone number, always available — not a rotating team of strangers.": "Un oficial de préstamos, un número de teléfono, siempre disponible — no un equipo rotativo de desconocidos.",
+  "One loan officer, one phone number, always available, not a rotating team of strangers.": "Un oficial de préstamos, un número de teléfono, siempre disponible, no un equipo rotativo de desconocidos.",
   "Digital + Human": "Digital + humano",
   "Apply online in minutes. Then get real human support every step of the way to closing.": "Solicita en línea en minutos. Luego recibe apoyo humano real en cada paso hasta el cierre.",
   "Loan Programs": "Programas de préstamo",
@@ -2747,8 +3023,10 @@ const I18N_DICT = {
   "Personal Information": "Información personal",
   "Tell us a little about yourself so we can get started.": "Cuéntanos un poco sobre ti para comenzar.",
   "First Name *": "Nombre *",
+  "First Name": "Nombre",
   "Jane": "María",
   "Last Name *": "Apellido *",
+  "Last Name": "Apellido",
   "Smith": "García",
   "Email Address *": "Correo electrónico *",
   "Phone Number *": "Número de teléfono *",
@@ -2870,7 +3148,7 @@ const I18N_DICT = {
   "Message": "Mensaje",
   "Tell us more about what you need…": "Cuéntanos más sobre lo que necesitas…",
   "Send Message": "Enviar mensaje",
-  "Team Estrella — mortgage experts serving Central Florida in Portuguese, English and Spanish. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licensed in FL.": "Team Estrella — expertos en hipotecas en el Centro de la Florida, atendiendo en portugués, inglés y español. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licenciado en Florida.",
+  "Team Estrella, mortgage experts serving Central Florida in Portuguese, English and Spanish. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licensed in FL.": "Team Estrella, expertos en hipotecas en el Centro de la Florida, atendiendo en portugués, inglés y español. Nilo Estrella, NMLS #2802165 · Acrisure Mortgage, LLC, NMLS #152859 · Licenciado en Florida.",
   "Conventional Loans": "Préstamos convencionales",
   "FHA Loans": "Préstamos FHA",
   "VA Loans": "Préstamos VA",
@@ -2923,7 +3201,24 @@ const I18N_DICT = {
   "Language": "Idioma",
   "Conventional 30-Year": "Convencional a 30 años",
   "Conventional 15-Year": "Convencional a 15 años",
-  "Jumbo 30-Year": "Jumbo a 30 años"
+  "Jumbo 30-Year": "Jumbo a 30 años",
+  "Strategic Advisory": "Asesoría Estratégica",
+  "Where Technical Precision Meets Concierge Service": "Donde la Precisión Técnica Encuentra la Atención Exclusiva",
+  "Combining Acrisure Mortgage's national strength with dedicated personal mortgage guidance in Central Florida.": "Uniendo la solidez nacional de Acrisure Mortgage con la dedicación de una consultoría personalizada en Florida Central.",
+  "Fintech Precision": "Precisión Fintech",
+  "Technical Precision & Analysis": "Precisión y Análisis Detallado",
+  "Meticulous loan structuring, comparative simulations, and agile underwriting to secure the most competitive mortgage terms in the US market.": "Estructuración minuciosa de cada expediente de crédito, simulaciones comparativas y agilidad en underwriting para asegurar las mejores condiciones.",
+  "24-Hour Pre-Approval Feasibility": "Análisis de Viabilidad en 24h",
+  "Programs for W-2, 1099, Bank Statement & DSCR": "Soluciones para W-2, 1099, Extractos Bancarios y DSCR",
+  "In-House Processing & Underwriting": "Procesamiento y Underwriting Internos",
+  "Digital Concierge": "Concierge Digital",
+  "Digital Concierge Experience": "Atención Concierge Digital",
+  "Complete peace of mind from initial consultation to keys in hand for your Florida home, with personal guidance in your preferred language.": "Tranquilidad y seguridad desde la primera consulta hasta la entrega de llaves de tu casa en Florida, con asesoría en tu idioma.",
+  "Trilingual Support (PT · EN · ES)": "Atención Trilingüe (Español · Inglés · Portugués)",
+  "Central Florida Market Specialist": "Especialista en el Mercado de Florida Central",
+  "Direct Line with Nilo Estrella": "Contacto Directo con Nilo Estrella",
+  "\"We guide you through every step of mortgage financing in the United States, turning your property acquisition into a smooth, transparent, and secure journey.\"": "\"Te guiamos en cada etapa del crédito hipotecario en los Estados Unidos, transformando la adquisición de tu propiedad en un proceso ágil, transparente y seguro.\"",
+  "· Team Estrella Leader · NMLS #2802165": "· Líder de Team Estrella · NMLS #2802165"
   }
 };
 
@@ -2954,7 +3249,7 @@ const I18N_LINKS = {
     }
   },
   mailContact: {
-    base: 'mailto:nestrella@acrisuremortgage.com',
+    base: 'mailto:contato@niloestrella.com.br',
     subject: {
       en: 'Mortgage Inquiry - Team Estrella',
       pt: 'Dúvida sobre financiamento - Team Estrella',
@@ -2987,7 +3282,8 @@ const I18N_DYN_SEL = [
   '#c-price-label-text', '#a-price-label', '#a-dynfield-label',
   '#rev-name', '#rev-email', '#rev-phone', '#rev-co', '#rev-purpose', '#rev-proptype',
   '#rev-price-label', '#rev-price', '#rev-down-label', '#rev-down', '#rev-cashout',
-  '#rev-addr', '#rev-emp', '#rev-income', '#rev-fico', '#rev-prog'
+  '#rev-addr', '#rev-emp', '#rev-income', '#rev-fico', '#rev-prog',
+  '#a-phone', '#c-phone', '#a-phone-country', '#c-phone-country'
 ].join(',');
 
 /* ── Tradução de uma string ── */
@@ -3141,6 +3437,7 @@ function i18nRerender() {
   try { if (typeof calcUpdate === 'function') calcUpdate(); } catch (e) {}
   try { if (typeof updateLoanPurposeFields === 'function' && document.querySelector('input[name="purpose"]:checked')) updateLoanPurposeFields(); } catch (e) {}
   try { if (window.REVIEW_FILLED && typeof populateReview === 'function') populateReview(); } catch (e) {}
+  try { if (typeof renderAllCountryPickers === 'function') renderAllCountryPickers(); } catch (e) {}
   i18nReformatInputs();
   applyTranslations();
 }
@@ -3366,14 +3663,215 @@ function calcUpdate() {
 let currentStep = 1;
 var REVIEW_FILLED = false;   // o resumo já foi preenchido? (p/ re-traduzir ao trocar idioma)
 
+/* ── Gestão de telefones internacionais (E.164 / SVG Flags / Formatação Inteligente) ── */
+const PHONE_COUNTRIES = [
+  { code: 'USA', dial: '+1', name: { pt: 'Estados Unidos', en: 'United States', es: 'Estados Unidos' }, mask: 'us', placeholder: '(352) 555-0100', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="16" fill="#b22234"/><rect y="2.46" width="24" height="1.23" fill="#fff"/><rect y="4.92" width="24" height="1.23" fill="#fff"/><rect y="7.38" width="24" height="1.23" fill="#fff"/><rect y="9.85" width="24" height="1.23" fill="#fff"/><rect y="12.31" width="24" height="1.23" fill="#fff"/><rect y="14.77" width="24" height="1.23" fill="#fff"/><rect width="9.6" height="8.6" fill="#3c3b6e"/><circle cx="4.8" cy="4.3" r="1.8" fill="#fff"/></svg>' },
+  { code: 'BRA', dial: '+55', name: { pt: 'Brasil', en: 'Brazil', es: 'Brasil' }, mask: 'br', placeholder: '(11) 98765-4321', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="16" fill="#009b3a"/><polygon points="12,1.8 22.2,8 12,14.2 1.8,8" fill="#fedf00"/><circle cx="12" cy="8" r="3.6" fill="#002776"/><path d="M8.6,8.8 C10,7.2 13.8,7.2 15.4,8.8" stroke="#fff" stroke-width="0.8" fill="none"/></svg>' },
+  { code: 'PRT', dial: '+351', name: { pt: 'Portugal', en: 'Portugal', es: 'Portugal' }, mask: 'pt', placeholder: '912 345 678', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="9.6" height="16" fill="#046a38"/><rect x="9.6" width="14.4" height="16" fill="#da291c"/><circle cx="9.6" cy="8" r="3" fill="#fed100"/><circle cx="9.6" cy="8" r="2" fill="#da291c"/><rect x="9.1" y="7.1" width="1" height="1.8" fill="#fff"/></svg>' },
+  { code: 'ESP', dial: '+34', name: { pt: 'Espanha', en: 'Spain', es: 'España' }, mask: 'es', placeholder: '612 345 678', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="4" fill="#aa151b"/><rect y="4" width="24" height="8" fill="#f1bf00"/><rect y="12" width="24" height="4" fill="#aa151b"/><circle cx="6.5" cy="8" r="1.6" fill="#aa151b"/></svg>' },
+  { code: 'MEX', dial: '+52', name: { pt: 'México', en: 'Mexico', es: 'México' }, mask: 'intl', placeholder: '55 1234 5678', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="8" height="16" fill="#006847"/><rect x="8" width="8" height="16" fill="#fff"/><rect x="16" width="8" height="16" fill="#ce1126"/><circle cx="12" cy="8" r="1.8" fill="#784f18"/></svg>' },
+  { code: 'COL', dial: '+57', name: { pt: 'Colômbia', en: 'Colombia', es: 'Colombia' }, mask: 'intl', placeholder: '300 123 4567', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="8" fill="#fcd116"/><rect y="8" width="24" height="4" fill="#003893"/><rect y="12" width="24" height="4" fill="#ce1126"/></svg>' },
+  { code: 'ARG', dial: '+54', name: { pt: 'Argentina', en: 'Argentina', es: 'Argentina' }, mask: 'intl', placeholder: '11 2345 6789', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="5.33" fill="#74acdf"/><rect y="5.33" width="24" height="5.34" fill="#fff"/><rect y="10.67" width="24" height="5.33" fill="#74acdf"/><circle cx="12" cy="8" r="1.6" fill="#f6b40e"/></svg>' },
+  { code: 'CAN', dial: '+1', name: { pt: 'Canadá', en: 'Canada', es: 'Canadá' }, mask: 'us', placeholder: '(416) 555-0100', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="6" height="16" fill="#ff0000"/><rect x="6" width="12" height="16" fill="#ffffff"/><rect x="18" width="6" height="16" fill="#ff0000"/><path d="M12,4 L13,7 L15,6 L14,8.5 L16,9.5 L13,10.5 L12.5,12.5 L11.5,12.5 L11,10.5 L8,9.5 L10,8.5 L9,6 L11,7 Z" fill="#ff0000"/></svg>' },
+  { code: 'GBR', dial: '+44', name: { pt: 'Reino Unido', en: 'United Kingdom', es: 'Reino Unido' }, mask: 'intl', placeholder: '7911 123456', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="16" fill="#012169"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#fff" stroke-width="3"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#c8102e" stroke-width="1.8"/><path d="M12,0 V16 M0,8 H24" stroke="#fff" stroke-width="5"/><path d="M12,0 V16 M0,8 H24" stroke="#c8102e" stroke-width="3"/></svg>' },
+  { code: 'CHL', dial: '+56', name: { pt: 'Chile', en: 'Chile', es: 'Chile' }, mask: 'intl', placeholder: '9 1234 5678', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="8" fill="#fff"/><rect y="8" width="24" height="8" fill="#d52b1e"/><rect width="8" height="8" fill="#0039a6"/><polygon points="4,2.2 4.6,3.8 6.2,3.8 4.9,4.8 5.4,6.4 4,5.4 2.6,6.4 3.1,4.8 1.8,3.8 3.4,3.8" fill="#fff"/></svg>' },
+  { code: 'PER', dial: '+51', name: { pt: 'Peru', en: 'Peru', es: 'Perú' }, mask: 'intl', placeholder: '912 345 678', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="8" height="16" fill="#d91023"/><rect x="8" width="8" height="16" fill="#ffffff"/><rect x="16" width="8" height="16" fill="#d91023"/></svg>' },
+  { code: 'URY', dial: '+598', name: { pt: 'Uruguai', en: 'Uruguay', es: 'Uruguay' }, mask: 'intl', placeholder: '91 234 567', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="16" fill="#fff"/><rect y="1.78" width="24" height="1.78" fill="#0038a8"/><rect y="5.33" width="24" height="1.78" fill="#0038a8"/><rect y="8.89" width="24" height="1.78" fill="#0038a8"/><rect y="12.44" width="24" height="1.78" fill="#0038a8"/><rect width="9" height="9" fill="#fff"/><circle cx="4.5" cy="4.5" r="2.2" fill="#fcd116"/></svg>' },
+  { code: 'PRY', dial: '+595', name: { pt: 'Paraguai', en: 'Paraguay', es: 'Paraguay' }, mask: 'intl', placeholder: '981 123456', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="5.33" fill="#d52b1e"/><rect y="5.33" width="24" height="5.34" fill="#ffffff"/><rect y="10.67" width="24" height="5.33" fill="#0038a8"/><circle cx="12" cy="8" r="1.6" fill="#0038a8"/></svg>' },
+  { code: 'VEN', dial: '+58', name: { pt: 'Venezuela', en: 'Venezuela', es: 'Venezuela' }, mask: 'intl', placeholder: '412 1234567', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="5.33" fill="#fcd116"/><rect y="5.33" width="24" height="5.34" fill="#0038a8"/><rect y="10.67" width="24" height="5.33" fill="#ce1126"/><circle cx="12" cy="8" r="1.5" fill="#fff"/></svg>' },
+  { code: 'ITA', dial: '+39', name: { pt: 'Itália', en: 'Italy', es: 'Italia' }, mask: 'intl', placeholder: '312 345 6789', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="8" height="16" fill="#009246"/><rect x="8" width="8" height="16" fill="#ffffff"/><rect x="16" width="8" height="16" fill="#ce2b37"/></svg>' },
+  { code: 'FRA', dial: '+33', name: { pt: 'França', en: 'France', es: 'Francia' }, mask: 'intl', placeholder: '6 12 34 56 78', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="8" height="16" fill="#002395"/><rect x="8" width="8" height="16" fill="#ffffff"/><rect x="16" width="8" height="16" fill="#ed2939"/></svg>' },
+  { code: 'DEU', dial: '+49', name: { pt: 'Alemanha', en: 'Germany', es: 'Alemania' }, mask: 'intl', placeholder: '151 23456789', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="5.33" fill="#000000"/><rect y="5.33" width="24" height="5.34" fill="#dd0000"/><rect y="10.67" width="24" height="5.33" fill="#ffce00"/></svg>' },
+  { code: 'INT', dial: '+', name: { pt: 'Outro país', en: 'Other country', es: 'Otro país' }, mask: 'intl', placeholder: '+1 555 123 4567', svg: '<svg viewBox="0 0 24 16" width="20" height="14" class="country-flag-svg"><rect width="24" height="16" fill="#13243f" rx="2"/><circle cx="12" cy="8" r="6" fill="none" stroke="#e7b95c" stroke-width="1.1"/><ellipse cx="12" cy="8" rx="2.8" ry="6" fill="none" stroke="#e7b95c" stroke-width="0.9"/><line x1="6" y1="8" x2="18" y2="8" stroke="#e7b95c" stroke-width="0.9"/></svg>' }
+];
+
+function formatPhoneDigits(rawDigits, mask) {
+  if (!rawDigits) return '';
+  if (mask === 'us') {
+    const d = rawDigits.slice(0, 10);
+    if (d.length <= 3) return d;
+    if (d.length <= 6) return '(' + d.slice(0, 3) + ') ' + d.slice(3);
+    return '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+  } else if (mask === 'br') {
+    const d = rawDigits.slice(0, 11);
+    if (d.length <= 2) return d.length ? '(' + d : '';
+    if (d.length <= 6) return '(' + d.slice(0, 2) + ') ' + d.slice(2);
+    if (d.length <= 10) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
+    return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
+  } else if (mask === 'pt' || mask === 'es') {
+    const d = rawDigits.slice(0, 9);
+    if (d.length <= 3) return d;
+    if (d.length <= 6) return d.slice(0, 3) + ' ' + d.slice(3);
+    return d.slice(0, 3) + ' ' + d.slice(3, 6) + ' ' + d.slice(6);
+  } else {
+    const d = rawDigits.slice(0, 15);
+    if (d.length <= 4) return d;
+    if (d.length <= 8) return d.slice(0, 4) + ' ' + d.slice(4);
+    return d.slice(0, 3) + ' ' + d.slice(3, 7) + ' ' + d.slice(7);
+  }
+}
+
+function getFullPhone(prefix) {
+  const input = document.getElementById(prefix + '-phone');
+  const country = document.getElementById(prefix + '-phone-country');
+  if (!input) return '';
+  const val = input.value.trim();
+  if (!val) return '';
+  if (val.startsWith('+')) return val;
+  const dial = country ? country.value : '+1';
+  if (dial === '+') return '+' + val.replace(/^\+*/, '');
+  return dial + ' ' + val;
+}
+
+var registeredPhonePickers = [];
+
+function initCustomPhonePicker(inputId, hiddenCountryId, btnId, codeId, menuId) {
+  const input = document.getElementById(inputId);
+  const hiddenCountry = document.getElementById(hiddenCountryId);
+  const btn = document.getElementById(btnId);
+  const codeSpan = document.getElementById(codeId);
+  const menu = document.getElementById(menuId);
+  if (!input || !hiddenCountry || !btn || !codeSpan || !menu) return;
+
+  function findCountry(dialOrCode) {
+    return PHONE_COUNTRIES.find(c => c.dial === dialOrCode || c.code === dialOrCode) || PHONE_COUNTRIES[0];
+  }
+
+  function renderMenu() {
+    const currentDial = hiddenCountry.value || '+1';
+    const l = currentLang || 'pt';
+    let html = '';
+    PHONE_COUNTRIES.forEach(c => {
+      const isSelected = (c.dial === currentDial && (c.code !== 'CAN' || currentDial !== '+1'));
+      const cName = (c.name && c.name[l]) ? c.name[l] : (c.name ? c.name.en : c.code);
+      html += '<button type="button" class="country-option-item' + (isSelected ? ' is-selected' : '') + '" role="option" data-dial="' + c.dial + '" data-code="' + c.code + '" data-mask="' + c.mask + '" data-placeholder="' + c.placeholder + '" aria-selected="' + (isSelected ? 'true' : 'false') + '">';
+      html += '<span class="country-flag-wrap">' + c.svg + '</span>';
+      html += '<span class="country-code-tag">' + c.code + '</span>';
+      html += '<span class="country-name">' + cName + '</span>';
+      html += '<span class="country-dial">' + c.dial + '</span>';
+      html += '</button>';
+    });
+    menu.innerHTML = html;
+  }
+
+  function setCountry(c, triggerReformat) {
+    hiddenCountry.value = c.dial;
+    codeSpan.textContent = c.dial;
+    input.placeholder = c.placeholder;
+    if (triggerReformat !== false) {
+      const digits = input.value.replace(/\D/g, '');
+      input.value = formatPhoneDigits(digits, c.mask);
+    }
+    renderMenu();
+    if (inputId === 'a-phone') validateStep(1);
+  }
+
+  function openMenu() {
+    document.querySelectorAll('.country-dropdown-menu.is-open').forEach(m => {
+      if (m !== menu) {
+        m.classList.remove('is-open');
+        const b = m.closest('.custom-country-picker').querySelector('.country-trigger');
+        if (b) { b.classList.remove('is-open'); b.setAttribute('aria-expanded', 'false'); }
+      }
+    });
+    renderMenu();
+    menu.classList.add('is-open');
+    btn.classList.add('is-open');
+    btn.setAttribute('aria-expanded', 'true');
+    const sel = menu.querySelector('.is-selected');
+    if (sel && sel.scrollIntoView) {
+      sel.scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  function closeMenu() {
+    menu.classList.remove('is-open');
+    btn.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (menu.classList.contains('is-open')) closeMenu();
+    else openMenu();
+  });
+
+  menu.addEventListener('click', function(e) {
+    const item = e.target.closest('.country-option-item');
+    if (!item) return;
+    e.stopPropagation();
+    const code = item.getAttribute('data-code');
+    const c = findCountry(code);
+    setCountry(c, true);
+    closeMenu();
+    input.focus();
+  });
+
+  input.addEventListener('input', function() {
+    let val = input.value;
+    if (val.trim().startsWith('+')) {
+      const cleanVal = val.trim();
+      const sorted = [...PHONE_COUNTRIES].filter(c => c.dial !== '+').sort((a,b) => b.dial.length - a.dial.length);
+      let matched = null;
+      for (const country of sorted) {
+        if (cleanVal.startsWith(country.dial)) {
+          matched = country;
+          break;
+        }
+      }
+      if (matched) {
+        setCountry(matched, false);
+        const remainder = cleanVal.slice(matched.dial.length).replace(/\D/g, '');
+        input.value = formatPhoneDigits(remainder, matched.mask);
+        if (inputId === 'a-phone') validateStep(1);
+        return;
+      }
+    }
+    const currentDial = hiddenCountry.value || '+1';
+    const c = findCountry(currentDial);
+    const digits = val.replace(/\D/g, '');
+    input.value = formatPhoneDigits(digits, c.mask);
+    if (inputId === 'a-phone') validateStep(1);
+  });
+
+  setCountry(findCountry('+1'), false);
+  registeredPhonePickers.push({ renderMenu: renderMenu, setCountry: setCountry, findCountry: findCountry });
+}
+
+function renderAllCountryPickers() {
+  registeredPhonePickers.forEach(p => p.renderMenu());
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.custom-country-picker')) {
+    document.querySelectorAll('.country-dropdown-menu.is-open').forEach(m => {
+      m.classList.remove('is-open');
+      const b = m.closest('.custom-country-picker').querySelector('.country-trigger');
+      if (b) { b.classList.remove('is-open'); b.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.country-dropdown-menu.is-open').forEach(m => {
+      m.classList.remove('is-open');
+      const b = m.closest('.custom-country-picker').querySelector('.country-trigger');
+      if (b) { b.classList.remove('is-open'); b.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+});
+
 /* ── Validação de email ── */
 function isValidEmail(v) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 }
 
-/* ── Validação de telefone (mínimo 10 dígitos) ── */
+/* ── Validação de telefone internacional (8 a 15 dígitos) ── */
 function isValidPhone(v) {
-  return v.replace(/\D/g, '').length >= 10;
+  if (!v) return false;
+  const digits = v.replace(/\D/g, '');
+  return digits.length >= 8 && digits.length <= 15;
 }
 
 /* ── Verifica se um valor de input é válido conforme seu tipo ── */
@@ -3503,7 +4001,7 @@ function populateReview() {
 
   document.getElementById('rev-name').textContent    = (gv('a-fname') + ' ' + gv('a-lname')).trim() || '—';
   document.getElementById('rev-email').textContent   = gv('a-email') || '—';
-  document.getElementById('rev-phone').textContent   = gv('a-phone') || '—';
+  document.getElementById('rev-phone').textContent   = getFullPhone('a') || '—';
   document.getElementById('rev-co').textContent      = coborrower
     ? t(coborrower.value === 'yes' ? 'Yes, with co-borrower' : 'No, just me') : '—';
 
@@ -3571,7 +4069,7 @@ async function submitApp() {
     'First Name': gv('a-fname'),
     'Last Name': gv('a-lname'),
     'Email': gv('a-email'),
-    'Phone': gv('a-phone'),
+    'Phone': getFullPhone('a'),
     'Marital Status': gv('a-marital'),
     'Co-Borrower': document.querySelector('input[name="coborrower"]:checked').value,
     'Loan Purpose': document.querySelector('input[name="purpose"]:checked').value,
@@ -3629,18 +4127,36 @@ async function submitApp() {
 
 /* ── Inicialização do form ── */
 document.addEventListener('DOMContentLoaded', function () {
+  initCustomPhonePicker('a-phone', 'a-phone-country', 'a-country-btn', 'a-trigger-code', 'a-country-menu');
+  initCustomPhonePicker('c-phone', 'c-phone-country', 'c-country-btn', 'c-trigger-code', 'c-country-menu');
   validateStep(1);
   validateStep(2);
   validateStep(3);
   validateStep(4);
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function() {
+      const cPhone = document.getElementById('c-phone');
+      if (cPhone && cPhone.value.trim()) {
+        cPhone.value = getFullPhone('c');
+      }
+    });
+  }
 });
 
-function sendContact() {
-  const name = gv('c-name');
+function sendContact(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const fname = gv('c-fname') || gv('c-name');
+  const lname = gv('c-lname');
   const email = gv('c-cemail');
-  if (!name || !email) { showToast(t('Please fill in your name and email.')); return; }
+  if (!fname || !email) { showToast(t('Please fill in your name and email.')); return; }
   showToast(t("✓ Message sent! We'll be in touch shortly."));
-  ['c-name','c-phone','c-cemail','c-msg'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  ['c-fname','c-lname','c-name','c-phone','c-cemail','c-msg'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  const cCountry = document.getElementById('c-phone-country');
+  const cTrigger = document.getElementById('c-trigger-code');
+  if (cCountry) cCountry.value = '+1';
+  if (cTrigger) cTrigger.textContent = '+1';
 }
 
 /* ════════════════════════════════════════════════════
@@ -4344,17 +4860,99 @@ document.addEventListener('DOMContentLoaded', function () { calcUpdate(); });
     if (document.hidden) clearAutoplay(); else scheduleAutoplay();
   });
 
+  /* ── Mapeamento e navegação direta para cards a partir do rodapé / links externos ── */
+  var programMap = {
+    'prog-conventional': 0,
+    'prog-fha': 0,
+    'prog-first-time': 0,
+    'prog-va': 1,
+    'prog-refinance': 1,
+    'prog-new-construction': 2,
+    'prog-construction': 2,
+    'prog-dscr': 3,
+    'prog-investment': 3,
+    'prog-jumbo': 4,
+    'prog-bank-statement': 5,
+    'prog-bank': 5
+  };
+
+  function navigateToProgram(index, shouldFlip){
+    if (typeof index !== 'number' || isNaN(index)) return;
+    index = ((index % total) + total) % total;
+    clearAutoplay();
+    moveTo(index);
+    var targetCard = cards[index];
+    if (targetCard){
+      targetCard.classList.remove('program-card-targeted');
+      void targetCard.offsetWidth;
+      targetCard.classList.add('program-card-targeted');
+      window.setTimeout(function(){
+        targetCard.classList.remove('program-card-targeted');
+      }, 2200);
+
+      if (shouldFlip !== false){
+        window.setTimeout(function(){
+          setFlipped(targetCard, true);
+        }, 360);
+      }
+    }
+    var programsSec = document.getElementById('programs');
+    if (programsSec){
+      var targetY = programsSec.getBoundingClientRect().top + window.pageYOffset - 75;
+      window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+    }
+    scheduleAutoplay();
+  }
+
+  function handleProgramLinkClick(event){
+    var link = event.target && event.target.closest ? event.target.closest('a[data-program-target], a[href*="#prog-"]') : null;
+    if (!link) return;
+
+    var targetIndex = -1;
+    if (link.hasAttribute('data-program-target')){
+      targetIndex = parseInt(link.getAttribute('data-program-target'), 10);
+    } else {
+      var href = link.getAttribute('href') || '';
+      var hash = href.replace(/^.*#/, '');
+      if (programMap.hasOwnProperty(hash)){
+        targetIndex = programMap[hash];
+      }
+    }
+
+    if (targetIndex >= 0 && targetIndex < total){
+      event.preventDefault();
+      navigateToProgram(targetIndex, true);
+      if (window.history && window.history.pushState && link.getAttribute('href')){
+        window.history.pushState(null, '', link.getAttribute('href'));
+      }
+    }
+  }
+
+  document.addEventListener('click', handleProgramLinkClick);
+
+  function checkHash(){
+    var hash = (window.location.hash || '').replace(/^#/, '');
+    if (!hash) return;
+    if (programMap.hasOwnProperty(hash)){
+      window.setTimeout(function(){
+        navigateToProgram(programMap[hash], true);
+      }, 300);
+    }
+  }
+  window.addEventListener('hashchange', checkHash);
+  if (window.location.hash) {
+    checkHash();
+  }
+
+  window.teamEstrellaCarousel = {
+    moveTo: moveTo,
+    navigateToProgram: navigateToProgram
+  };
+
   layout();
   render();
   scheduleAutoplay();
 })();
 </script>
-
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a39975f98e1e58cf',t:'MTc4OTE1ODk0Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3dcf9041ae29a85',t:'MTc4OTg2Njg2MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
- render();
-})();
-</script>
-
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a42c60b25c58dfbd',t:'MTc5MDY5OTQ4MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
