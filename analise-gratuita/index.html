@@ -23,38 +23,39 @@
 <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     /* ============================================================
        Team Estrella — Análise de financiamento (Flórida)
        Design system: navy editorial + gold
-       Tipografia: Fraunces (display) / Inter (UI)
+       Tipografia: Sora (display) / Inter (UI) — conforme Brand Book (Pomelli)
+       Cores: #070F1D · #C9993A · #E7B95C · #FFFFFF — conforme Brand Book
        ============================================================ */
     :root{
-      --bg:#0a1524;
-      --bg-2:#0d1b2e;
-      --bg-3:#060d17;
-      --paper:#f7f4ee;
-      --paper-line:#e2dbcc;
+      --bg:#070F1D;
+      --bg-2:#0c1728;
+      --bg-3:#04080f;
+      --paper:#ffffff;
+      --paper-line:#eae3d3;
       --card:#ffffff;
       --ink:#141d29;
       --ink-soft:#4c5866;
       --muted:#a9b7ca;
       --line:rgba(255,255,255,.12);
-      --gold:#c69433;
-      --gold-2:#e0b663;
+      --gold:#C9993A;
+      --gold-2:#E7B95C;
       --gold-soft:#f3ddab;
       --green:#166534;
       --red:#b42318;
       --shadow-card:0 30px 70px rgba(4,10,20,.45), 0 2px 8px rgba(4,10,20,.3);
       --radius:16px;
       --max:1140px;
-      --font-display:"Fraunces","Iowan Old Style",Georgia,"Times New Roman",serif;
+      --font-display:"Sora","Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
       --font-body:"Inter",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    [id]{scroll-margin-top:92px}
+    [id]{scroll-margin-top:210px}
     body{
       margin:0;color:#e9f0fa;background:var(--bg);
       font-family:var(--font-body);font-size:16px;line-height:1.55;
@@ -73,15 +74,15 @@
 
     /* ---------- Header ---------- */
     .top{position:sticky;top:0;z-index:40;background:rgba(10,21,36,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    .nav{height:150px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:13px;min-width:0}
-    .logo-wrap{position:relative;width:52px;height:52px;flex:0 0 auto;display:grid;place-items:center}
+    .nav{min-height:150px;padding:14px 0;display:flex;align-items:center;justify-content:space-between;gap:65px}
+    .brand{display:flex;align-items:center;gap:65px;min-width:0}
+    .logo-wrap{position:relative;width:152px;height:152px;flex:0 0 auto;display:grid;place-items:center}
     .logo-wrap img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 16px rgba(0,0,0,.3))}
     .logo-wrap.noimg img{display:none}
     .logo-fallback{display:none;width:100%;height:100%}
     .logo-wrap.noimg .logo-fallback{display:block}
     .brand-copy{display:block;min-width:0}
-    .brand-copy b{display:block;font-family:var(--font-display);font-weight:600;font-size:17px;letter-spacing:.01em;color:#fff;line-height:1.2}
+    .brand-copy b{display:block;font-family:var(--font-display);font-weight:700;font-size:17px;letter-spacing:.01em;color:#fff;line-height:1.2}
     .brand-copy span{display:block;font-size:11.5px;color:var(--muted);line-height:1.35;letter-spacing:.02em}
     .nav-links{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:600;color:#c8d4e4}
     .nav-links a{padding:6px 2px;border-bottom:1px solid transparent;transition:color .15s ease,border-color .15s ease}
@@ -96,8 +97,8 @@
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(380px,.88fr);gap:56px;align-items:start;position:relative}
     .eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2);margin-bottom:22px}
     .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);flex:0 0 auto}
-    h1{font-family:var(--font-display);font-weight:560;font-size:clamp(36px,5vw,58px);line-height:1.06;letter-spacing:-.015em;margin:0 0 20px;color:#fff}
-    h1 em{font-style:italic;font-weight:520;color:var(--gold-2)}
+    h1{font-family:var(--font-display);font-weight:700;font-size:clamp(34px,4.6vw,54px);line-height:1.08;letter-spacing:-.02em;margin:0 0 20px;color:#fff}
+    h1 em{font-style:normal;font-weight:700;color:var(--gold-2)}
     .sub{font-size:clamp(16.5px,1.9vw,19px);color:#c3cfdc;max-width:60ch;margin:0 0 28px}
     .tick-list{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:13px;max-width:560px}
     .tick-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:#dbe5f1}
@@ -120,7 +121,7 @@
     .form-head{padding:26px 28px 18px;border-bottom:1px solid #e9edf3}
     .form-head .tag{display:inline-flex;align-items:center;gap:7px;color:#15803d;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;margin-bottom:12px}
     .form-head .tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.18)}
-    .form-head h2{font-family:var(--font-display);font-weight:600;font-size:26px;line-height:1.15;margin:0 0 8px;letter-spacing:-.01em;color:var(--ink)}
+    .form-head h2{font-family:var(--font-display);font-weight:700;font-size:26px;line-height:1.15;margin:0 0 8px;letter-spacing:-.01em;color:var(--ink)}
     .form-head p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.55}
     form{padding:22px 28px 28px}
     .form-progress{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px}
@@ -130,7 +131,7 @@
     .step{display:none}
     .step.active{display:block;animation:stepIn .22s ease}
     @keyframes stepIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-    .q{font-family:var(--font-display);font-weight:600;font-size:22px;line-height:1.22;letter-spacing:-.01em;margin:0 0 16px;color:var(--ink)}
+    .q{font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1.22;letter-spacing:-.01em;margin:0 0 16px;color:var(--ink)}
     .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     label.field{display:block;margin-bottom:12px}
     .lab{display:block;color:#5a6675;font-size:12px;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
@@ -183,7 +184,7 @@
     .err{display:none;margin-top:14px;background:#fef2f2;color:var(--red);border:1px solid #fecaca;border-radius:10px;padding:11px 13px;font-size:13.5px;font-weight:600;line-height:1.45}
     .success{display:none;padding:30px 28px;text-align:left}
     .success .ok-badge{width:46px;height:46px;border-radius:50%;background:#ecfdf3;border:1px solid #bbf7d0;display:grid;place-items:center;margin-bottom:16px}
-    .success h3{margin:0 0 8px;font-family:var(--font-display);font-weight:600;font-size:24px;color:#14532d}
+    .success h3{margin:0 0 8px;font-family:var(--font-display);font-weight:700;font-size:24px;color:#14532d}
     .success p{margin:0 0 10px;color:#166534;font-size:15px}
     .success .small{font-size:12.5px;color:#2f6c49}
 
@@ -208,13 +209,13 @@
     .section-head{margin-bottom:44px}
     .section-head .kicker{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
     .section-head .kicker::before{content:"";width:26px;height:1px;background:currentColor}
-    .section h2{font-family:var(--font-display);font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.1;letter-spacing:-.015em;margin:0 0 14px}
+    .section h2{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.1;letter-spacing:-.015em;margin:0 0 14px}
     .section-head p{margin:0;font-size:16.5px}
 
     /* steps */
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
     .step-card{border-top:1px solid var(--paper-line);padding-top:22px}
-    .step-card .num{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:15px;color:var(--gold);letter-spacing:.04em;display:block;margin-bottom:12px}
+    .step-card .num{font-family:var(--font-display);font-weight:600;font-size:13px;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:12px}
     .step-card .num::before{content:"— "}
     .step-card h3{font-size:18px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em;color:var(--ink)}
     .step-card p{font-size:14.5px;line-height:1.6;margin:0;color:#5f6b79}
@@ -225,7 +226,7 @@
     .audience-sticky .btn{margin-top:26px}
     .audience-list{border-top:1px solid var(--line)}
     .audience-item{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--line)}
-    .audience-item .idx{font-family:var(--font-display);font-style:italic;font-size:26px;color:var(--gold-2);line-height:1}
+    .audience-item .idx{font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--gold-2);line-height:1}
     .audience-item h3{font-size:17.5px;font-weight:700;margin:2px 0 6px;color:#fff;letter-spacing:-.01em}
     .audience-item p{font-size:14.5px;line-height:1.6;margin:0;color:#aebccd}
 
@@ -244,7 +245,7 @@
     /* closing CTA */
     .cta-band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:70px 0;text-align:left;background:linear-gradient(180deg,var(--bg-2),var(--bg))}
     .cta-band-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
-    .cta-band h2{font-family:var(--font-display);font-weight:600;font-size:clamp(26px,3.2vw,36px);margin:0 0 8px;letter-spacing:-.01em;color:#fff}
+    .cta-band h2{font-family:var(--font-display);font-weight:700;font-size:clamp(26px,3.2vw,36px);margin:0 0 8px;letter-spacing:-.01em;color:#fff}
     .cta-band p{margin:0;color:#aebccd;font-size:15px;max-width:56ch}
     .cta-band .btn{white-space:nowrap}
 
@@ -261,12 +262,13 @@
     .footer{padding:30px 0;color:#aebbd0;border-top:1px solid var(--line);font-size:12px;background:var(--bg-3)}
     .footer-layout{display:flex;align-items:center;justify-content:space-between;gap:24px}
     .footer-left{display:flex;align-items:center;gap:18px;min-width:0}
-    .footer-logo-wrap{position:relative;width:74px;height:74px;flex:0 0 auto;display:grid;place-items:center}
+    .footer-logo-wrap{position:relative;width:152px;height:152px;flex:0 0 auto;display:grid;place-items:center}
     .footer-logo-wrap img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 16px rgba(0,0,0,.3))}
     .footer-logo-wrap.noimg img{display:none}
     .footer-logo-wrap .logo-fallback{display:none;width:100%;height:100%}
     .footer-logo-wrap.noimg .logo-fallback{display:block}
     .footer-info{min-width:0;line-height:1.6}
+    .footer .tagline{display:block;font-family:var(--font-display);font-weight:600;color:var(--gold-2);font-size:14px;letter-spacing:.01em;margin-bottom:6px}
     .footer-info b{display:block;color:#fff;font-size:13px;margin-bottom:2px}
     .footer-right{display:flex;align-items:center;gap:18px;margin-left:auto;text-align:right;justify-content:flex-end}
     .footer-copy{max-width:320px;color:#8fa0b8}
@@ -294,6 +296,8 @@
       .credential-strip .ehl-text{margin-left:0}
       .audience-grid{grid-template-columns:1fr;gap:36px}
       .audience-sticky{position:static}
+      .top{position:static}
+      .nav{min-height:0;padding:18px 0;gap:16px}
       .nav-links{display:none}
       .sticky-cta{display:block}
       .footer{padding-bottom:96px}
@@ -302,9 +306,10 @@
     @media(max-width:600px){
       .wrap{width:min(100% - 26px,var(--max))}
       .nav{min-height:66px}
-      .logo-wrap{width:44px;height:44px}
+      
+      .brand{gap:20px}
       .brand-copy span{display:none}
-      .nav .cta{font-size:12.5px;padding:9px 12px}
+      .nav .cta{display:none}
       .hero{padding-top:36px}
       h1{font-size:34px}
       .hero-actions .btn{width:100%}
@@ -320,7 +325,18 @@
       .footer-right{width:100%;margin-left:0;flex-direction:row;justify-content:space-between;text-align:left;align-items:center}
       .footer-copy{max-width:230px}
     }
-  </style>
+  
+    /* CRO: troca de valor + microcopy */
+    .form-progress .time{font-size:12px;color:#98a4b5;font-weight:600}
+    .get-title{margin:16px 0 7px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8a6a1f}
+    .get-list{list-style:none;margin:0;padding:12px 14px;background:#fbf7ee;border:1px solid #f0e4cb;border-radius:10px;display:grid;gap:7px}
+    .get-list li{position:relative;padding-left:22px;font-size:12.5px;color:#5f5340;line-height:1.5}
+    .get-list li::before{content:"";position:absolute;left:2px;top:4px;width:11px;height:6px;border-left:2px solid #b98a2f;border-bottom:2px solid #b98a2f;transform:rotate(-45deg)}
+    .hero-micro{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:16px 0 0;font-size:12.5px;font-weight:600;color:#aebccd}
+    .hero-micro span{display:inline-flex;align-items:center;gap:7px}
+    .hero-micro span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold-2)}
+    .privacy a{color:#8a6a1f;text-decoration:underline;text-underline-offset:3px}
+</style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -347,7 +363,7 @@
         </span>
         <span class="brand-copy">
           <b>Team Estrella</b>
-          <span>Nilo Estrella · MLO NMLS #2802165</span>
+          <span>Sua casa. Seu sonho. Sua equipe.</span>
         </span>
       </a>
       <nav class="nav-links" aria-label="Navegação principal">
@@ -384,6 +400,7 @@
             <a class="btn primary" href="#analise">Começar minha análise <span class="arr" aria-hidden="true">→</span></a>
             <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
           </div>
+          <p class="hero-micro"><span>Gratuito</span><span>Sem compromisso</span><span>≈ 30 segundos</span></p>
           <p class="fine">A análise é preliminar e não representa aprovação de crédito, compromisso de financiamento ou oferta vinculante. Condições sujeitas à análise de crédito, renda, ativos, documentação, elegibilidade do programa, avaliação do imóvel, underwriting e demais critérios aplicáveis.</p>
         </div>
 
@@ -392,23 +409,80 @@
             <span class="tag">Análise inicial gratuita</span>
             <h2>Preencha em poucos segundos</h2>
             <p>Suas respostas ajudam a direcionar melhor o primeiro contato. Após o envio, eu entro em contato pessoalmente.</p>
+            <p class="get-title">Ao finalizar, você recebe:</p>
+            <ul class="get-list" aria-label="O que você recebe">
+              <li>Leitura inicial do seu cenário de financiamento</li>
+              <li>O que organizar em documentação e capital</li>
+              <li>Próximos passos recomendados — sem compromisso</li>
+            </ul>
           </div>
 
           <form id="leadForm" novalidate>
             <div class="form-progress">
               <span class="count" id="stepCount">Etapa 1 de 8</span>
+              <span class="time" aria-hidden="true">≈ 2 minutos</span>
             </div>
             <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
             <div class="step active" data-step="0">
+              <h2 class="q">Qual é seu principal objetivo?</h2>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="goal" value="renda"><span><b>Gerar renda</b><span>Comprar pensando em locação ou retorno mensal.</span></span></label>
+                <label class="choice"><input type="radio" name="goal" value="valorizacao"><span><b>Valorização patrimonial</b><span>Construir patrimônio em dólar ao longo do tempo.</span></span></label>
+                <label class="choice"><input type="radio" name="goal" value="ferias"><span><b>Casa de férias + investimento</b><span>Usar em alguns períodos e avaliar rentabilização.</span></span></label>
+                <label class="choice"><input type="radio" name="goal" value="morar"><span><b>Morar nos EUA no futuro</b><span>Planejamento de mudança ou segunda residência.</span></span></label>
+                <label class="choice"><input type="radio" name="goal" value="avaliando"><span><b>Ainda estou avaliando</b><span>Quero entender se faz sentido para mim.</span></span></label>
+              </div>
+            </div>
+
+            <div class="step" data-step="1">
+              <h2 class="q">Qual faixa de investimento você considera?</h2>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="budget" value="750"><span><b>Acima de US$ 750 mil</b></span></label>
+                <label class="choice"><input type="radio" name="budget" value="500"><span><b>US$ 500 mil a US$ 750 mil</b></span></label>
+                <label class="choice"><input type="radio" name="budget" value="350"><span><b>US$ 350 mil a US$ 500 mil</b></span></label>
+                <label class="choice"><input type="radio" name="budget" value="200"><span><b>US$ 200 mil a US$ 350 mil</b></span></label>
+                <label class="choice"><input type="radio" name="budget" value="100"><span><b>Até US$ 200 mil</b></span></label>
+                <label class="choice"><input type="radio" name="budget" value="nao-sei"><span><b>Ainda não sei</b></span></label>
+              </div>
+            </div>
+
+            <div class="step" data-step="2">
+              <h2 class="q">Quando você pretende investir?</h2>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="timeline" value="90"><span><b>Nos próximos 90 dias</b></span></label>
+                <label class="choice"><input type="radio" name="timeline" value="180"><span><b>Em 3 a 6 meses</b></span></label>
+                <label class="choice"><input type="radio" name="timeline" value="365"><span><b>Em 6 a 12 meses</b></span></label>
+                <label class="choice"><input type="radio" name="timeline" value="long"><span><b>Mais de 12 meses</b></span></label>
+                <label class="choice"><input type="radio" name="timeline" value="pesquisa"><span><b>Apenas pesquisando</b></span></label>
+              </div>
+            </div>
+
+            <div class="step" data-step="3">
+              <h2 class="q">Você já tem capital disponível para entrada/custos?</h2>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="capital" value="sim"><span><b>Sim</b><span>Já tenho capital disponível.</span></span></label>
+                <label class="choice"><input type="radio" name="capital" value="parcial"><span><b>Parcialmente</b><span>Tenho parte e estou organizando o restante.</span></span></label>
+                <label class="choice"><input type="radio" name="capital" value="financiamento"><span><b>Estou buscando entender o financiamento</b><span>Ainda quero calcular melhor a entrada.</span></span></label>
+                <label class="choice"><input type="radio" name="capital" value="nao"><span><b>Ainda formando capital</b><span>Estou em fase inicial.</span></span></label>
+              </div>
+            </div>
+
+            <div class="step" data-step="4">
+              <h2 class="q">Qual região da Flórida te interessa?</h2>
+              <label class="field"><span class="lab">Região</span><input id="region" placeholder="Orlando, Tampa, Miami, Sarasota, ainda não sei..." required></label>
+            </div>
+
+            <div class="step" data-step="5">
               <h2 class="q">Qual é o seu nome?</h2>
               <div class="grid2">
                 <label class="field"><span class="lab">Nome</span><input id="firstName" autocomplete="given-name" placeholder="Seu nome" required></label>
                 <label class="field"><span class="lab">Sobrenome</span><input id="lastName" autocomplete="family-name" placeholder="Seu sobrenome" required></label>
               </div>
+              <p class="field-note">Estamos nas etapas finais — seus dados são usados apenas para esta análise.</p>
             </div>
 
-            <div class="step" data-step="1">
+            <div class="step" data-step="6">
               <h2 class="q">Qual é seu WhatsApp?</h2>
               <div class="field phone-field">
                 <span class="lab">País e WhatsApp</span>
@@ -429,59 +503,11 @@
               </div>
             </div>
 
-            <div class="step" data-step="2">
+            <div class="step" data-step="7">
               <h2 class="q">Qual é seu e-mail?</h2>
               <label class="field"><span class="lab">E-mail</span><input id="email" type="email" autocomplete="email" placeholder="voce@email.com" required></label>
-            </div>
-
-            <div class="step" data-step="3">
-              <h2 class="q">Qual é seu principal objetivo?</h2>
-              <div class="choices">
-                <label class="choice"><input type="radio" name="goal" value="renda"><span><b>Gerar renda</b><span>Comprar pensando em locação ou retorno mensal.</span></span></label>
-                <label class="choice"><input type="radio" name="goal" value="valorizacao"><span><b>Valorização patrimonial</b><span>Construir patrimônio em dólar ao longo do tempo.</span></span></label>
-                <label class="choice"><input type="radio" name="goal" value="ferias"><span><b>Casa de férias + investimento</b><span>Usar em alguns períodos e avaliar rentabilização.</span></span></label>
-                <label class="choice"><input type="radio" name="goal" value="morar"><span><b>Morar nos EUA no futuro</b><span>Planejamento de mudança ou segunda residência.</span></span></label>
-                <label class="choice"><input type="radio" name="goal" value="avaliando"><span><b>Ainda estou avaliando</b><span>Quero entender se faz sentido para mim.</span></span></label>
-              </div>
-            </div>
-
-            <div class="step" data-step="4">
-              <h2 class="q">Qual faixa de investimento você considera?</h2>
-              <div class="choices">
-                <label class="choice"><input type="radio" name="budget" value="750"><span><b>Acima de US$ 750 mil</b></span></label>
-                <label class="choice"><input type="radio" name="budget" value="500"><span><b>US$ 500 mil a US$ 750 mil</b></span></label>
-                <label class="choice"><input type="radio" name="budget" value="350"><span><b>US$ 350 mil a US$ 500 mil</b></span></label>
-                <label class="choice"><input type="radio" name="budget" value="200"><span><b>US$ 200 mil a US$ 350 mil</b></span></label>
-                <label class="choice"><input type="radio" name="budget" value="100"><span><b>Até US$ 200 mil</b></span></label>
-                <label class="choice"><input type="radio" name="budget" value="nao-sei"><span><b>Ainda não sei</b></span></label>
-              </div>
-            </div>
-
-            <div class="step" data-step="5">
-              <h2 class="q">Quando você pretende investir?</h2>
-              <div class="choices">
-                <label class="choice"><input type="radio" name="timeline" value="90"><span><b>Nos próximos 90 dias</b></span></label>
-                <label class="choice"><input type="radio" name="timeline" value="180"><span><b>Em 3 a 6 meses</b></span></label>
-                <label class="choice"><input type="radio" name="timeline" value="365"><span><b>Em 6 a 12 meses</b></span></label>
-                <label class="choice"><input type="radio" name="timeline" value="long"><span><b>Mais de 12 meses</b></span></label>
-                <label class="choice"><input type="radio" name="timeline" value="pesquisa"><span><b>Apenas pesquisando</b></span></label>
-              </div>
-            </div>
-
-            <div class="step" data-step="6">
-              <h2 class="q">Você já tem capital disponível para entrada/custos?</h2>
-              <div class="choices">
-                <label class="choice"><input type="radio" name="capital" value="sim"><span><b>Sim</b><span>Já tenho capital disponível.</span></span></label>
-                <label class="choice"><input type="radio" name="capital" value="parcial"><span><b>Parcialmente</b><span>Tenho parte e estou organizando o restante.</span></span></label>
-                <label class="choice"><input type="radio" name="capital" value="financiamento"><span><b>Estou buscando entender o financiamento</b><span>Ainda quero calcular melhor a entrada.</span></span></label>
-                <label class="choice"><input type="radio" name="capital" value="nao"><span><b>Ainda formando capital</b><span>Estou em fase inicial.</span></span></label>
-              </div>
-            </div>
-
-            <div class="step" data-step="7">
-              <h2 class="q">Qual região da Flórida te interessa?</h2>
-              <label class="field"><span class="lab">Região</span><input id="region" placeholder="Orlando, Tampa, Miami, Sarasota, ainda não sei..." required></label>
               <label class="check"><input id="consent" type="checkbox" required><span>Concordo em enviar meus dados para receber contato sobre esta análise inicial. Entendo que não há promessa de aprovação, taxa, retorno financeiro ou disponibilidade de produto.</span></label>
+              <p class="field-note privacy">Seus dados são tratados conforme a <a href="https://www.niloestrella.com.br/politica-de-privacidade" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</p>
             </div>
 
             <div class="err" id="formError" role="alert"></div>
@@ -649,6 +675,7 @@
           <svg class="logo-fallback" viewBox="0 0 74 74" aria-hidden="true"><rect width="74" height="74" rx="18" fill="#0d1b2e" stroke="rgba(224,182,99,.4)"/><text x="37" y="48" font-family="Georgia,serif" font-style="italic" font-size="34" fill="#e0b663" text-anchor="middle">E</text></svg>
         </span>
         <div class="footer-info">
+          <span class="tagline">Sua casa. Seu sonho. Sua equipe.</span>
           <b>Nilo Estrella · Team Estrella · Acrisure Mortgage</b>
           Mortgage Loan Originator · NMLS #2802165<br>
           Acrisure Mortgage, LLC · NMLS #152859<br>
@@ -997,23 +1024,23 @@
     function clearError(){ err.textContent = ""; err.style.display = "none"; }
 
     function validate(i){
-      if (i === 0){
+      if (i === 0 && !choice("goal")) return "Selecione seu objetivo.";
+      if (i === 1 && !choice("budget")) return "Selecione sua faixa de investimento.";
+      if (i === 2 && !choice("timeline")) return "Selecione quando pretende investir.";
+      if (i === 3 && !choice("capital")) return "Selecione sua situação de capital.";
+      if (i === 4){
+        if (!document.getElementById("region").value.trim()) return "Informe a região de interesse.";
+      }
+      if (i === 5){
         if (!document.getElementById("firstName").value.trim()) return "Informe seu nome.";
         if (!document.getElementById("lastName").value.trim()) return "Informe seu sobrenome.";
       }
-      if (i === 1){
+      if (i === 6){
         const p = phonePayload();
         if (!p.valid) return phoneErrorMessage(p);
       }
-      if (i === 2){
-        if (!validEmail(document.getElementById("email").value)) return "Informe um e-mail válido.";
-      }
-      if (i === 3 && !choice("goal")) return "Selecione seu objetivo.";
-      if (i === 4 && !choice("budget")) return "Selecione sua faixa de investimento.";
-      if (i === 5 && !choice("timeline")) return "Selecione quando pretende investir.";
-      if (i === 6 && !choice("capital")) return "Selecione sua situação de capital.";
       if (i === 7){
-        if (!document.getElementById("region").value.trim()) return "Informe a região de interesse.";
+        if (!validEmail(document.getElementById("email").value)) return "Informe um e-mail válido.";
         if (!document.getElementById("consent").checked) return "Confirme o consentimento para envio da análise.";
       }
       return "";
@@ -1062,7 +1089,7 @@
     form.querySelectorAll(".choices input").forEach(input => {
       input.addEventListener("change", () => {
         clearError();
-        if (cur >= 3 && cur <= 6){ setTimeout(() => next.click(), 120); }
+        if (cur <= 3){ setTimeout(() => next.click(), 120); }
       });
     });
 
@@ -1166,5 +1193,5 @@
     render();
   })();
   </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3dc4b720ff8ce07',t:'MTc4OTg1OTc1MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
